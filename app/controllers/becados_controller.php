@@ -356,7 +356,7 @@ class BecadosController extends AppController {
 		$this->set(compact('est', 'tipos','cedula','ac','meses','nucleos'));
 	}
 
-	function add_new($cedula= null)
+	function add_new($cedula = null)
 	{
 		//SELECT * FROM `becados` WHERE fecha_fin >= '2017-07-29'
 		$carreras = $this->Academico->Carrera->find('list');
@@ -367,6 +367,16 @@ class BecadosController extends AppController {
 		$this->set(compact('carreras', 'dependencias', 'tipos','meses','cedula','nucleos'));
 		if (!empty($this->data))
 		{
+			$estudiante = $this->Estudiante->ffCedula($this->data['cedula']);
+			if($estudiante)
+			{
+				$this->Session->setFlash('
+				<div class="alert alert-danger text-center" role="alert">
+					La cédula se encuentra registrada
+				</div>
+				');
+			$this->redirect(array('action' => 'index'));
+			}
 			$this->data['fecha_nac']=$this->Fechas->fechaAbase($this->data['fecha_nac']);
 			$this->Estudiante->create();
 			$this->Estudiante->save($this->data);
