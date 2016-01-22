@@ -232,6 +232,7 @@ class SolicitantesController extends AppController {
 			$this->data['fecha_nac'] = $this->Fechas->fechaAbase($this->data['fecha_nac']);
 
 			$this->Solicitante->read(null, $this->data['id']);
+			$solicitud = $this->Solicitante->read(null, $this->data['id']);
 			$this->Solicitante->save($this->data);
 			
 			$this->Estudiante->read(null, $this->data['estudiante_id']);
@@ -249,7 +250,8 @@ class SolicitantesController extends AppController {
 				Registro editado exitosamente
 			</div>
 			');
-			$this->redirect(array('action' => 'index'));
+			//$this->redirect(array('action' => 'edit', $solicitante['Solicitante']['id']));
+			$this->redirect(array('action' => 'view',$solicitud['Solicitante']['id']));
 		}
 
 		if (empty($this->data))

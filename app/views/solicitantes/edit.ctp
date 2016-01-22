@@ -7,7 +7,11 @@
 <h2>Editar Solicitud</h2><br>
 
 <form id="frm-registrar" action="<?php echo $html->url('/solicitantes/edit'); ?>" method="post">
-
+<?php
+		if($this->Session->check('Message.flash')):
+			echo $this->Session->flash();
+		endif;
+	?>
 <div style="display:none" id="msj1" class="alert alert-danger text-center" role="alert"></div>
 
 <div class="panel panel-default">

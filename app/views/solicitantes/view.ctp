@@ -1,10 +1,19 @@
 <h2><a class="btn btn-primary pull-right" target="_blank" href="<?php echo $this->webroot . 'solicitantes/pdf_solicitud/' . $solicitante['Estudiante']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-print"></i> Imprimir</a>Ver Solicitud</h2><br>
 
+
+<?php
+		if($this->Session->check('Message.flash')):
+			echo $this->Session->flash();
+		endif;
+	?>
+	
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<h4>Datos del Estudiante
 		<a title="Editar" href="<?php echo $this->webroot . 'solicitantes/edit/' . $solicitante['Solicitante']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
 		</h4>
+
+
 	</div>
 	<table class="table table-bordered">
 		<tr>
