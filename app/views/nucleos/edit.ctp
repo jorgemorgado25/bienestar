@@ -1,3 +1,10 @@
+<script>
+	$(document).ready(function()
+	{
+		$("#nombre").alpha();
+	});
+</script>
+
 <h2>Editar Núcleo</h2><br>
 
 <div style="display:none" id="msj1" class="alert alert-danger text-center" role="alert"></div>
@@ -14,7 +21,7 @@
 							'label'=>false,
 							'div'=>false,
 							'class'=>'form-control',
-							'id'=>'cedula',
+							'id'=>'nombre',
 							'required'=>'required',
 							'placehorder'=>'Escribe el nombre del núcleo'
 						));

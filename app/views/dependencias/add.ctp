@@ -1,3 +1,10 @@
+<script>
+	$(document).ready(function()
+	{
+		$("#supervisor").alpha();
+	});
+</script>
+
 <h2>Agregar Dependencia</h2><br>
 
 <div style="display:none" id="msj1" class="alert alert-danger text-center" role="alert"></div>

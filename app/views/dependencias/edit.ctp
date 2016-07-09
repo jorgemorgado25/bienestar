@@ -1,3 +1,10 @@
+<script>
+	$(document).ready(function()
+	{
+		$("#supervisor").alpha();
+	});
+</script>
+
 <h2>Editar Dependencia</h2><br>
 
 <div style="display:none" id="msj1" class="alert alert-danger text-center" role="alert"></div>
@@ -39,7 +46,7 @@ echo $form->hidden('id');
 							'label'=>false,
 							'div'=>false,
 							'class'=>'form-control',
-							'id'=>'cedula',
+							'id'=>'supervisor',
 							'required'=>'required',
 							'placehorder'=>'Escribe del supervisor'
 						));
