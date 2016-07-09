@@ -1,4 +1,4 @@
-<h2>Rechazar Solicitud</h2><br>
+<h2>Mover a Pendientes</h2><br>
 
 <b>Cédula: </b>
 <?php echo $solicitud['Estudiante']['cedula'] ?><br>
