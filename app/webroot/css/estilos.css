@@ -1,0 +1,28 @@
+.logo-unerg
+{
+	background: #337ab7;
+	padding:23px 0 5px 5px;
+	border-bottom: solid 1px #e6e6e6;
+	min-height: 130px;
+}
+
+.logo-unerg img
+{
+	float: right;
+	overflow: hidden;
+	display: inline-block;
+}
+.logo-unerg p{
+	
+	margin-left: 20px;
+	color: #d7eef4;
+	font-size: 20px;
+	text-align: center;
+}
+.alert{
+	margin-top: 15px;
+}
+button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}

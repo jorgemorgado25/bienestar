@@ -1,0 +1,9 @@
+TRUNCATE `academicos`;
+TRUNCATE `activos`;
+TRUNCATE `becados`;
+TRUNCATE `cabeceras`;
+TRUNCATE `estudiantes`;
+TRUNCATE `hculminados`;
+TRUNCATE `hdependencias`;
+TRUNCATE `nominas`;
+TRUNCATE `solicitantes`;
