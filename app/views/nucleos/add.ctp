@@ -16,7 +16,7 @@
 			<div class="col-md-12">
 				<div class="form-group">
 					<label>Núcleo</label>
-					<input class="form-control" id="nombre" name="data['Nucleo'][nombre]" placeholder="Escribe el nombre del núcleo" type="text" autofocus required pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}">
+					<input class="form-control" id="nombre" name="data['Nucleo'][nombre]" placeholder="Escribe el nombre del núcleo" type="text" autofocus required>
 				</div>
 			</div>			
 		</div>

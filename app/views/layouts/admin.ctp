@@ -159,6 +159,17 @@
                             </ul>
                         </li>
                         <li>
+                            <a href="#"><i class="glyphicon glyphicon-education"></i> &nbsp; Carreras<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo $this->webroot . 'carreras/' ?>"><i class='fa fa-list-ol fa-fw'></i> Listado</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo $this->webroot . 'carreras/add/' ?>"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                </li>                                
+                            </ul>
+                        </li>
+                        <li>
                             <a href="#"><i class="glyphicon glyphicon-list-alt"></i> &nbsp; Reportes<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>

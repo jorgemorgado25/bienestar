@@ -27,7 +27,7 @@ class NucleosController extends AppController {
 		if (!empty($this->data)) {
 			
 			$this->redirect(array('action' => 'index'));
-			/*
+			
 			$this->Nucleo->create();
 			if ($this->Nucleo->save($this->data)) {
 				$this->Session->setFlash('
@@ -38,7 +38,7 @@ class NucleosController extends AppController {
 			} else {
 				$this->Session->setFlash(__('The dependencia could not be saved. Please, try again.', true));
 			}
-			*/
+			
 		}
 	}
 
