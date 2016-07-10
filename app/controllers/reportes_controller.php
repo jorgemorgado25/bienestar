@@ -14,6 +14,29 @@ class ReportesController extends AppController {
 		}
 	}
 
+	function total_general()
+	{
+		if (!empty($this->data))
+		{
+			$this->redirect(array('action' => 'pdf_total_general',$this->data['mes'],$this->data['ano']));
+		}
+		$meses = $this->Fechas->varMeses();
+		$this->set(compact('meses'));
+	}
+
+	function pdf_total_general($mes, $ano)
+	{
+		$this->layout = 'pdf';
+		$t_m_ayudantia = $this->Nomina->query("select COUNT(nominas.id) as total FROM nominas JOIN estudiantes ON estudiantes.id = nominas.estudiante_id where year(nominas.fecha) = " . $ano . " and month(fecha) = " . $mes . " and tipo_id = 1 and estudiantes.genero = 'm'");
+		$t_f_ayudantia = $this->Nomina->query("select COUNT(nominas.id) as total FROM nominas JOIN estudiantes ON estudiantes.id = nominas.estudiante_id where year(nominas.fecha) = " . $ano . " and month(fecha) = " . $mes . " and tipo_id = 1 and estudiantes.genero = 'f'");
+		$t_f_bolsa = $this->Nomina->query("select COUNT(nominas.id) as total FROM nominas JOIN estudiantes ON estudiantes.id = nominas.estudiante_id where year(nominas.fecha) = " . $ano . " and month(fecha) = " . $mes . " and tipo_id = 2 and estudiantes.genero = 'f'");
+		$t_m_bolsa = $this->Nomina->query("select COUNT(nominas.id) as total FROM nominas JOIN estudiantes ON estudiantes.id = nominas.estudiante_id where year(nominas.fecha) = " . $ano . " and month(fecha) = " . $mes . " and tipo_id = 2 and estudiantes.genero = 'm'");
+		$t_f_preparaduria = $this->Nomina->query("select COUNT(nominas.id) as total FROM nominas JOIN estudiantes ON estudiantes.id = nominas.estudiante_id where year(nominas.fecha) = " . $ano . " and month(fecha) = " . $mes . " and tipo_id = 3 and estudiantes.genero = 'f'");
+		$t_m_preparaduria = $this->Nomina->query("select COUNT(nominas.id) as total FROM nominas JOIN estudiantes ON estudiantes.id = nominas.estudiante_id where year(nominas.fecha) = " . $ano . " and month(fecha) = " . $mes . " and tipo_id = 3 and estudiantes.genero = 'm'");
+		$mes = $this->Fechas->getMes($mes);
+		$this->set(compact('mes', 'ano', 't_m_ayudantia', 't_f_ayudantia', 't_f_bolsa', 't_m_bolsa', 't_f_preparaduria', 't_m_preparaduria'));
+	}
+
 	function nomina_txt()
 	{
 		if (!empty($this->data))
