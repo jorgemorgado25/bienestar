@@ -49,7 +49,7 @@
 	$pdf->Ln(18);
 
 	$pdf->SetFont('Arial','B',12);
-	$pdf->Cell(160,6, utf8_decode('TOTAL DE ALUMNOS BENEFICIADOS'),0,1,'C');
+	$pdf->Cell(160,6, utf8_decode('TOTAL GENERAL DE BENEFICIADOS'),0,1,'C');
 	$pdf->Cell(160,6,$mes . ' DEL ' . $ano,0,1,'C');
 
 	$pdf->Ln(22);
