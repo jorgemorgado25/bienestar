@@ -1,5 +1,6 @@
 <?php
 	echo $this->Html->script('funciones');
+	echo $this->Html->script('validar_datos_beneficiados');
 ?>
 
 <h2>Editar Solicitud</h2><br>
@@ -212,9 +213,14 @@
 
 <div style="display:none" id="msj2" class="alert alert-danger text-center" role="alert"></div>
 
-<button id="btnEnviar" type="submit" class="btn btn-primary">
+<button id="btn-validar" type="button" class="btn btn-primary">
 	<i class="fa fa-save fa-fw"></i> Guardar
 </button>
+
+<button style="display:none" id="btnEnviar" type="submit" class="btn btn-primary">
+	<i class="fa fa-save fa-fw"></i> Guardar
+</button>
+<br>
 <input type="hidden" name="data[estudiante_id]" value="<?php echo $est['Estudiante']['id'] ?>">
 <input type="hidden" name="data[academico_id]" value="<?php echo $ac['Academico']['id'] ?>">
 

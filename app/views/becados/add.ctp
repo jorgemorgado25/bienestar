@@ -1,4 +1,7 @@
-<?php echo $this->Html->script('buscar-dependencias'); ?>
+<?php
+	echo $this->Html->script('buscar-dependencias');
+	echo $this->Html->script('validar_input_fecha');
+?>
 
 <script type="text/javascript">
 	$(document).ready(function() {

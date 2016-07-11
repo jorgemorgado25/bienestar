@@ -1,7 +1,9 @@
 <script>
 	$(document).ready(function()
 	{
-		$("#supervisor").alpha();
+		$("#supervisor").alpha({
+			allow : '.'
+		});
 	});
 </script>
 

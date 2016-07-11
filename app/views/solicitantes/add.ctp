@@ -1,6 +1,7 @@
 <?php
 	echo $this->Html->script('funciones');
 	echo $this->Html->script('validar_datos_beneficiados');
+	echo $this->Html->script('validar_input_fecha');
 ?>
 
 <h2>Agregar Solicitud</h2><br>
@@ -211,8 +212,8 @@
 
 <div style="display:none" id="msj2" class="alert alert-danger text-center" role="alert"></div>
 
-<button id="btn-validar" type="button" class="btn btn-success">
-	<i class="fa fa-save fa-fw"></i> Validar Datos
+<button id="btn-validar" type="button" class="btn btn-primary">
+	<i class="fa fa-save fa-fw"></i> Guardar
 </button>
 
 <button style="display:none" id="btnEnviar" type="submit" class="btn btn-primary">

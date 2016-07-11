@@ -182,7 +182,7 @@
                                     <a href="<?php echo $this->webroot . 'reportes/beneficiados_excel' ?>"><i class='glyphicon glyphicon-menu-right'></i> Beneficiados Excel</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo $this->webroot . 'reportes/total_general' ?>"><i class='glyphicon glyphicon-menu-right'></i> <small>Beneficiados en General</small></a>
+                                    <a href="<?php echo $this->webroot . 'reportes/total_general' ?>"><i class='glyphicon glyphicon-menu-right'></i> <small>Total General de Beneficiados</small></a>
                                 </li>
                                 
                                 

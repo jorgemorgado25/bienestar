@@ -250,8 +250,8 @@
 	));
 	?>
 
-<button id="btn-validar" type="button" class="btn btn-success">
-	<i class="fa fa-save fa-fw"></i> Validar Datos
+<button id="btn-validar" type="button" class="btn btn-primary">
+	<i class="fa fa-save fa-fw"></i> Guardar
 </button>
 
 <button style="display:none" id="btnEnviar" type="submit" class="btn btn-primary">
