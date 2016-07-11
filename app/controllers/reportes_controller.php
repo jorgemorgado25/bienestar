@@ -185,6 +185,7 @@ class ReportesController extends AppController {
 
 	function txt($mes, $ano)
 	{
+		$this->set('title_for_layout','Pagos');
 		$this->layout = "txt";
 		//$this->Becado->recursive = 0;
 		$mes_letra = $this->Fechas->getMes($mes);
