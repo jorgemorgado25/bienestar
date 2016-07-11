@@ -3,7 +3,6 @@ class ReportesController extends AppController {
 
 	var $name = 'Reportes';
 	var $uses = array('Estudiante', 'Becado','Cabecera','Tipo','Nucleo','Nomina');
-	var $helpers = array('Palabra');
 
 	function beforeFilter()
 	{

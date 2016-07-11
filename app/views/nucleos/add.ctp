@@ -16,7 +16,7 @@
 			<div class="col-md-12">
 				<div class="form-group">
 					<label>Núcleo</label>
-					<input class="form-control" id="nombre" name="data['Nucleo'][nombre]" placeholder="Escribe el nombre del núcleo" type="text" autofocus required>
+					<input class="form-control" id="nombre" name="data[nombre]" placeholder="Escribe el nombre del núcleo" type="text" autofocus required>
 				</div>
 			</div>			
 		</div>

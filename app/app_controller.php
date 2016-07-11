@@ -1,7 +1,7 @@
 <?php
 class AppController extends Controller{
 	
-	var $helpers = array('Form', 'Html', 'Javascript', 'Time','Fechas','Session');
+	var $helpers = array('Form', 'Html', 'Javascript', 'Time','Fechas','Session', 'Palabra');
 	var $components = array('Session','Fechas','Audi','RequestHandler');
 
 

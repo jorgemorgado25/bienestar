@@ -4,7 +4,7 @@
 	});
 </script>
 
-<h2>Total de General de Beneficiados</h2>
+<h2>Total Beneficiados en General</h2>
 <br>
 <div class="panel panel-default">
 	<div class="panel-heading">Seleccione los datos del reporte</div>

@@ -26,8 +26,6 @@ class NucleosController extends AppController {
 	function add() {
 		if (!empty($this->data)) {
 			
-			$this->redirect(array('action' => 'index'));
-			
 			$this->Nucleo->create();
 			if ($this->Nucleo->save($this->data)) {
 				$this->Session->setFlash('
