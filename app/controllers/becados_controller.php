@@ -2,7 +2,7 @@
 class BecadosController extends AppController {
 
 	var $name = 'Becados';
-	var $uses = array('Becado','Estudiante','Academico','Nucleo','Dependencia','Solicitante');
+	var $uses = array('Becado', 'Estudiante','Academico','Nucleo','Dependencia','Solicitante');
 
 	function beforeFilter()
 	{
@@ -127,21 +127,9 @@ class BecadosController extends AppController {
 			    ),
 	    		array('Becado.id' => $this->data['becado_id'])
 			);
+			$this->Audi->reg($this->Session->read('user.User.id'), 'Becados','update_dependencia',$this->data['becado_id'],$this->Session->read('user.User.login'), 'becados/view/', 'Beneficiado dependencia modificada');
 			$this->redirect(array('action' => 'view', $this->data['becado_id']));
 		}
-
-		/*
-		Configure::write('debug',0);
-		$this->layout="ajax";
-		$this->autoRender = false;
-		$this->Becado->Hdependencia->create();
-		$this->Becado->Hdependencia->save($this->data);
-		$this->Becado->updateAll(
-		    array('Becado.dependencia_id' => $this->data['dependencia_id']),
-    		array('Becado.id' => $this->data['becado_id'])
-		);
-		return true;
-		*/
 	}
 
 	//Actualizo el Histotiral de activo
@@ -163,6 +151,7 @@ class BecadosController extends AppController {
 					),
 				array('Becado.id' => $this->data['becado_id'])
 			);
+			$this->Audi->reg($this->Session->read('user.User.id'), 'Becados','update_activo',$this->data['becado_id'],$this->Session->read('user.User.login'), 'becados/view/', 'Beneficiado historial activo modificado');
 			$this->redirect(array('action' => 'view', $this->data['becado_id']));
 		}
 		
@@ -202,6 +191,7 @@ class BecadosController extends AppController {
 					),
 				array('Becado.id' => $this->data['becado_id'])
 			);
+			$this->Audi->reg($this->Session->read('user.User.id'), 'Becados','update_culminado',$this->data['becado_id'],$this->Session->read('user.User.login'), 'becados/view/', 'Beneficiado historial culminado modificado');
 			$this->redirect(array('action' => 'view', $this->data['becado_id']));
 		}
 	}
@@ -223,7 +213,8 @@ class BecadosController extends AppController {
 	function add($cedula)
 	{
 
-		if (!empty($this->data)) {
+		if (!empty($this->data))
+		{
 
 			$this->data['fecha_fin'] = $this->data['ano_fin'].'-'.-$this->data['mes_fin'].'-28';
 
@@ -242,7 +233,7 @@ class BecadosController extends AppController {
 			$this->Becado->Hdependencia->create();
 			$this->Becado->Hdependencia->save($this->data);
 
-			$this->Audi->reg($this->Session->read('user.User.id'), 'Becados','add',$becado['Becado']['id']);
+			$this->Audi->reg($this->Session->read('user.User.id'), 'Becados','add',$becado['Becado']['id'], $this->Session->read('user.User.login'), 'becados/view/', 'Beneficiado Registrado');
 
 			$this->Estudiante->Solicitante->updateAll(
 			    array('Solicitante.becado' => 1),
@@ -297,7 +288,7 @@ class BecadosController extends AppController {
 			$this->Becado->Hculminado->save($this->data);
 			$this->Becado->Hdependencia->create();
 			$this->Becado->Hdependencia->save($this->data);
-			$this->Audi->reg($this->Session->read('user.User.id'), 'Becados','add_new',$becado['Becado']['id']);
+			$this->Audi->reg($this->Session->read('user.User.id'), 'Becados','add',$becado['Becado']['id'], $this->Session->read('user.User.login'), 'becados/view/', 'Beneficiado Registrado');
 			$this->Session->setFlash('
 				<div class="alert alert-success text-center" role="alert">
 					Registro creado exitosamente

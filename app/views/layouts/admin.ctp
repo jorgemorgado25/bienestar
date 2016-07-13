@@ -203,6 +203,14 @@
                                 </li>                                
                             </ul>
                         </li>
+                        <li>
+                            <a href="<?php echo $this->webroot . 'auditorias/index' ?>"><i class="glyphicon glyphicon-eye-open"></i> &nbsp; Bitácora del Sistema</a>
+                            
+                        </li>
+                        <li>
+                            <a href="http://localhost/respaldar"><i class="glyphicon glyphicon-download-alt"></i> &nbsp; Respaldar DB</a>
+                            
+                        </li>
                         <?php } ?>
                     </ul>
                 </div>

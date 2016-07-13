@@ -50,11 +50,23 @@
 	</div>
 	<table class="table table-bordered">
 		<tr>
+			<th>Status</th>
 			<th>Código</th>
 			<th>Prioridad</th>
 			<th>Fecha</th>
 		</tr>
 		<tr>
+			<td>
+				<?php
+					if($solicitante['Solicitante']['negada'] == 0)
+					{
+						echo 'Pendiente';
+					}else
+					{
+						echo 'Rechazada';
+					}
+				?>
+			</td>
 			<td><?php echo $solicitante['Solicitante']['codigo'] ?></td>
 			<td><?php echo $solicitante['Solicitante']['prioridad']?></td>
 			<td><?php echo $this->Fechas->voltearFecha($solicitante['Solicitante']['created']) ?></td>
@@ -64,7 +76,7 @@
 
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h4>Estatus de la Solicitud</h4>
+		<h4>Historial de Status</h4>
 	</div>
 	<table class="table table-bordered">
 		<tr>

@@ -65,6 +65,7 @@
 			<td class="text-center">
 				<a title ="Editar" class="btn btn-default btn-sm" href="<?php echo $this->webroot . 'users/edit/' . $administrador['User']['id'] ?>">
 					<i class="glyphicon glyphicon-pencil"></i></a>
+				<a href="<?php echo $this->webroot . 'users/view/' . $administrador['User']['id'] ?>" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></a>
 	    	&nbsp;				
 			</td>
 		</tr>

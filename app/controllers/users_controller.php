@@ -49,6 +49,8 @@ class UsersController extends AppController {
 				$this->User->create();
 				if ($this->User->save($this->data))
 				{
+					$user = $this->User->ffLog($this->data['User']['login']);
+					$this->Audi->reg($this->Session->read('user.User.id'), 'users','add',$user['User']['id'], $this->Session->read('user.User.login'), 'users/view/', 'Administrador creado');
 					$this->redirect(array('action' => 'index'));
 				} else {
 					$this->Session->setFlash(__('The usuario could not be saved. Please, try again.', true));
@@ -64,11 +66,14 @@ class UsersController extends AppController {
 		}
 		if (!empty($this->data))
 		{
-			$this->User->create();
+			//$this->User->create();
 			if ($this->User->save($this->data))
 			{
+				$user = $this->User->ffId($this->data['User']['id']);
+				$this->Audi->reg($this->Session->read('user.User.id'), 'users','edit', $user['User']['id'], $this->Session->read('user.User.login'), 'users/view/', 'Administrador modificado');
 				$this->redirect(array('action' => 'index'));
-			} else {
+			}else
+			{
 				$this->Session->setFlash(__('The usuario could not be saved. Please, try again.', true));
 			}
 		}
@@ -77,11 +82,17 @@ class UsersController extends AppController {
 		}
 	}
 
-	function delete($id){
-		if ($this->User->delete($id)) {
+	function delete($id)
+	{
+		if ($this->User->delete($id))
+		{
 			$this->redirect(array('action'=>'index'));
 		}
 	}
-	
+
+	function view($id)
+	{
+		$this->data = $this->User->read(null, $id);
+	}	
 }
 ?>

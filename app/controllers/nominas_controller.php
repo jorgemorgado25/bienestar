@@ -236,6 +236,8 @@ class NominasController extends AppController {
 
 					$this->Cabecera->Nomina->create();
 					$this->Cabecera->Nomina->save($data);
+
+					$this->Audi->reg($this->Session->read('user.User.id'), 'front','login','-', $this->Session->read('user.User.login'), 'front/login/', 'Inicio de Sesión');
 				}// for
 
 				//desactivar bolsa de trabajo
@@ -248,6 +250,8 @@ class NominasController extends AppController {
 			    		array('Becado.tipo_id' => 2, 'Becado.culminado' => 0)
 					);
 				}
+
+				$this->Audi->reg($this->Session->read('user.User.id'), 'nominas','add',$cabecera['Cabecera']['id'], $this->Session->read('user.User.login'), 'nominas/view/', 'Pago creado');
 				
 				$this->Session->setFlash('
 				<div class="alert alert-success text-center" role="alert">

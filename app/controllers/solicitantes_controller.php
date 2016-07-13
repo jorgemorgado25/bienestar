@@ -23,6 +23,7 @@ class SolicitantesController extends AppController {
 				array('Solicitante.negada' => 0),
 				array('Solicitante.id' => $this->data['solicitante_id'])
 			);
+			$this->Audi->reg($this->Session->read('user.User.id'), 'solicitantes','mover',$this->data['solicitante_id'],$this->Session->read('user.User.login'), 'solicitantes/view/', 'Solicitud movida a pendientes');
 			$this->redirect(array('action' => 'index'));
 		}
 		$solicitud = $this->Solicitante->find('first',array(
@@ -62,6 +63,7 @@ class SolicitantesController extends AppController {
 				array('Solicitante.negada' => 1),
 				array('Solicitante.id' => $this->data['solicitante_id'])
 			);
+			$this->Audi->reg($this->Session->read('user.User.id'), 'solicitantes','negar',$this->data['solicitante_id'],$this->Session->read('user.User.login'), 'solicitantes/view/', 'Solicitud movida a rechazadas');
 			$this->redirect(array('action' => 'negadas'));
 		}
 		$solicitud = $this->Solicitante->find('first',array(
@@ -189,7 +191,7 @@ class SolicitantesController extends AppController {
 			
 			$this->Solicitante->Stsolicitud->save($this->data);
 
-			$this->Audi->reg($this->Session->read('user.User.id'), 'solicitantes','add',$sol['Solicitante']['id']);
+			$this->Audi->reg($this->Session->read('user.User.id'), 'solicitantes','add',$sol['Solicitante']['id'], $this->Session->read('user.User.login'), 'solicitantes/view/', 'Registró Solicitud');
 			$this->Session->setFlash('
 				<div class="alert alert-success text-center" role="alert">
 					Registro creado exitosamente
@@ -223,7 +225,7 @@ class SolicitantesController extends AppController {
 			$this->Academico->save($this->data);
 
 			$sol = $this->Solicitante->ffEstudianteId($this->data['estudiante_id']);
-			$this->Audi->reg($this->Session->read('user.User.id'), 'solicitantes','edit',$sol['Solicitante']['id']);
+			$this->Audi->reg($this->Session->read('user.User.id'), 'solicitantes','edit',$sol['Solicitante']['id'], $this->Session->read('user.User.login'), 'solicitantes/view/', 'Solicitud Modificada');
 			$this->Session->setFlash('
 			<div class="alert alert-success text-center" role="alert">
 				Registro editado exitosamente
