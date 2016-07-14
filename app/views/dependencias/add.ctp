@@ -4,6 +4,7 @@
 		$("#supervisor").alpha({
 			allow : '.'
 		});
+		$("#dependencia").alpha();
 	});
 </script>
 
@@ -33,7 +34,7 @@
 			<div class="col-md-4">
 				<div class="form-group">
 					<label>Dependencia</label>
-					<input maxlength="100" class="form-control" id="nombre" name="data[nombre]" placeholder="Escribe el nombre de la dependencia" type="text" required autofocus>
+					<input maxlength="100" class="form-control" id="dependencia" name="data[nombre]" placeholder="Escribe el nombre de la dependencia" type="text" required autofocus>
 				</div>
 			</div>
 			<div class="col-md-4">
