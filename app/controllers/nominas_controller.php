@@ -61,6 +61,20 @@ class NominasController extends AppController {
 		$this->set(compact('nominas','cabecera'));
 	}
 
+	function xls_nomina($id)
+	{
+		$this->layout="xls";
+		if (!$id) {
+			$this->Session->setFlash(__('Invalid Nomina', true));
+			$this->redirect(array('action' => 'index'));
+		}
+		$nominas = $this->Cabecera->Nomina->find('all',array(
+			'conditions' => array('Nomina.cabecera_id' => $id)
+		));
+		$cabecera = $this->Cabecera->read(null, $id);
+		$this->set(compact('nominas','cabecera'));
+	}
+
 	function add()
 	{
 		$this->Tipo->recursive = -1;

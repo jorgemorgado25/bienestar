@@ -11,7 +11,7 @@
 	});
 </script>
 
-<h2><a class="btn btn-primary pull-right" target="_blank" href="<?php echo $this->webroot . 'nominas/print/' . $cabecera['Cabecera']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-print"></i> Imprimir</a>Detalle de Pago</h2><br>
+<h2><a class="btn btn-primary pull-right" href="<?php echo $this->webroot . 'nominas/xls_nomina/' . $cabecera['Cabecera']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-print"></i> Imprimir</a>Detalle de Pago</h2><br>
 
 <div class="panel panel-default">
 	<div class="panel-heading">Detalle de Pago</div>

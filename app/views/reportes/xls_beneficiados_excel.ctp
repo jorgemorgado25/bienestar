@@ -1,17 +1,19 @@
-<STYLE type="text/css">
-	.tableTd {
+<style type="text/css">
+	.tableTd
+	{
 	   	border-width: 0.5pt; 
 		border: solid;
 	}
-	.tableTdContent{
+	.tableTdContent
+	{
 		border-width: 0.5pt; 
 		border: solid;
 	}
-	#titles{
+	#titles
+	{
 		font-weight: bolder;
-	}
-   
-</STYLE>
+	}   
+</style>
 
 
 <table>

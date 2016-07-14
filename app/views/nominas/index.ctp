@@ -41,7 +41,7 @@
 				<td>
 					<a title="Ver Listado de Pagos" href="<?php echo $this->webroot . 'nominas/view/' . $c['Cabecera']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-search"></i></a>
 
-					<a target="_blank" href="<?php echo $this->webroot . 'nominas/print/' . $c['Cabecera']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-print"></i></a>
+					<a title="Imprimir" href="<?php echo $this->webroot . 'nominas/xls_nomina/' . $c['Cabecera']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-print"></i></a>
 				</td>
 			</tr>
 			<?php endforeach; ?>
