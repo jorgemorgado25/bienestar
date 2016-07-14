@@ -39,7 +39,7 @@
 				<td><?php echo $this->Fechas->becaFin($c['Cabecera']['fecha']) ?></td>
 				<td><?php echo $c['Cabecera']['monto'] ?></td>
 				<td>
-					<a href="<?php echo $this->webroot . 'nominas/view/' . $c['Cabecera']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-search"></i></a>
+					<a title="Ver Listado de Pagos" href="<?php echo $this->webroot . 'nominas/view/' . $c['Cabecera']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-search"></i></a>
 
 					<a target="_blank" href="<?php echo $this->webroot . 'nominas/print/' . $c['Cabecera']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-print"></i></a>
 				</td>

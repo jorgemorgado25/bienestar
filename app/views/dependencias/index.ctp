@@ -44,7 +44,7 @@
 		<td><?php echo $dependencia['Nucleo']['nombre']; ?>&nbsp;</td>
 		<td><?php echo $dependencia['Dependencia']['supervisor']; ?>&nbsp;</td>
 		<td>
-			<a href="<?php echo $this->webroot . 'dependencias/edit/' . $dependencia['Dependencia']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
+			<a title="Editar" href="<?php echo $this->webroot . 'dependencias/edit/' . $dependencia['Dependencia']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
 		</td>
 	</tr>
 <?php endforeach; ?>

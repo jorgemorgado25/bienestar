@@ -40,7 +40,7 @@
 		<td><?php echo $carrera['Carrera']['nombre'] ?></td>
 		<td><?php echo $carrera['Carrera']['codigo'] ?></td>
 		<td>
-			<a href="<?php echo $this->webroot . 'carreras/edit/' . $carrera['Carrera']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
+			<a title="Editar" href="<?php echo $this->webroot . 'carreras/edit/' . $carrera['Carrera']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
 		</td>
 	</tr>
 <?php endforeach; ?>

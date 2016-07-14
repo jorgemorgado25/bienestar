@@ -49,9 +49,9 @@
 		<td class="actions">
 			<a title="Editar" href="<?php echo $this->webroot . 'solicitantes/edit/' . $solicitante['Solicitante']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
 
-			<a href="<?php echo $this->webroot . 'solicitantes/view/' . $solicitante['Solicitante']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-search"></i></a>
+			<a title="Ver Ficha del Solicitante" href="<?php echo $this->webroot . 'solicitantes/view/' . $solicitante['Solicitante']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-search"></i></a>
 
-			<a title="PDF" target="_blank" href="<?php echo $this->webroot . 'solicitantes/pdf_solicitud/' . $solicitante['Estudiante']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-print"></i></a>
+			<a title="Descargar PDF" target="_blank" href="<?php echo $this->webroot . 'solicitantes/pdf_solicitud/' . $solicitante['Estudiante']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-print"></i></a>
 			<a title="Rechazar Solicitud" href="<?php echo $this->webroot . 'solicitantes/negar/' . $solicitante['Solicitante']['id'] ?>"  class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove-sign"></span></a>
 
 			<a title="Becar" class="btn btn-sm btn-primary" href="<?php echo $this->webroot . 'becados/add/' . $solicitante['Estudiante']['cedula'] ?>"><span class="glyphicon glyphicon-ok-sign"></span></a>

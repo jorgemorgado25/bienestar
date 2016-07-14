@@ -38,7 +38,7 @@
 		<td><?php echo $nucleo['Nucleo']['id']; ?>&nbsp;</td>
 		<td><?php echo $nucleo['Nucleo']['nombre'] ?></td>
 		<td>
-			<a href="<?php echo $this->webroot . 'nucleos/edit/' . $nucleo['Nucleo']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
+			<a title="Editar" href="<?php echo $this->webroot . 'nucleos/edit/' . $nucleo['Nucleo']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
 		</td>
 	</tr>
 <?php endforeach; ?>
