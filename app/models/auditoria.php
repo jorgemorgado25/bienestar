@@ -1,15 +1,8 @@
 <?php
 class Auditoria extends AppModel {
 	var $name = 'Auditoria';
+
+	var $order = array('Auditoria.id' => 'desc');
 	
-	var $belongsTo = array(
-		'User' => array(
-			'className' => 'User',
-			'foreignKey' => 'user_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
 
 }

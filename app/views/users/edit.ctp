@@ -14,7 +14,7 @@
  
 
 	<?php echo $form->create('User',array(
-		'id'=>'frm_add'));?>	
+		'id'=>'frm_add'));?>
 
 		<?php
 			echo $form->hidden('id');
@@ -40,7 +40,7 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Login</label>
-					<span class="form-control" type="text"><?php echo $this->data['User']['login'] ?></span>	
+					<span class="form-control" disabled type="text"><?php echo $this->data['User']['login'] ?></span>	
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -72,6 +72,7 @@
 	</div>
 
 	<div>
+		
 		<button class="btn btn-primary" name="submit" type="submit" tabindex="4" id="btn-submit">Aceptar</button>
 	</div>
 </form>
