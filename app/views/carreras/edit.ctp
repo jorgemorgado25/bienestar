@@ -22,7 +22,7 @@
 			<div class="col-md-7">
 				<div class="form-group">
 					<label>Nombre</label>
-					<input value=<?php echo $this->data['Carrera']['nombre']?> class="form-control" id="nombre" name="data[nombre]" placeholder="Escribe el nombre de la carrera" type="text" autofocus required>
+					<input value="<?php echo $this->data['Carrera']['nombre']?>" class="form-control" id="nombre" name="data[nombre]" placeholder="Escribe el nombre de la carrera" type="text" autofocus required>
 				</div>
 			</div>
 			<div class="col-md-5">

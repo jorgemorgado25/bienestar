@@ -24,6 +24,10 @@ class SolicitantesController extends AppController {
 				array('Solicitante.id' => $this->data['solicitante_id'])
 			);
 			$this->Audi->reg($this->Session->read('user.User.id'), 'solicitantes','mover',$this->data['solicitante_id'],$this->Session->read('user.User.login'), 'solicitantes/view/', 'Solicitud movida a pendientes');
+			$this->Session->setFlash('
+				<div class="alert alert-success text-center" role="alert">
+					Solicitud movida a pendientes exitosamente
+				</div>');
 			$this->redirect(array('action' => 'index'));
 		}
 		$solicitud = $this->Solicitante->find('first',array(
@@ -64,6 +68,10 @@ class SolicitantesController extends AppController {
 				array('Solicitante.id' => $this->data['solicitante_id'])
 			);
 			$this->Audi->reg($this->Session->read('user.User.id'), 'solicitantes','negar',$this->data['solicitante_id'],$this->Session->read('user.User.login'), 'solicitantes/view/', 'Solicitud movida a rechazadas');
+			$this->Session->setFlash('
+				<div class="alert alert-success text-center" role="alert">
+					Solicitud movida a rechazadas exitosamente
+				</div>');
 			$this->redirect(array('action' => 'negadas'));
 		}
 		$solicitud = $this->Solicitante->find('first',array(

@@ -11,7 +11,7 @@ class CarrerasController extends AppController {
 	}
 
 	function index() {
-		$this->Carrera->recursive = 0;
+		$this->Carrera->recursive = -1;
 		$this->set('carreras', $this->paginate());
 	}
 
@@ -43,7 +43,8 @@ class CarrerasController extends AppController {
 		}
 	}
 
-	function edit($id = null) {
+	function edit($id = null){
+		$this->Carrera->recursive = -1;
 		if (!$id && empty($this->data)) {
 			$this->redirect(array('action' => 'index'));
 		}
