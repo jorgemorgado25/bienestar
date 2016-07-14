@@ -48,9 +48,9 @@
 
 			<a title="Mover a Pendientes" href="<?php echo $this->webroot . 'solicitantes/mover/' . $solicitante['Solicitante']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-transfer"></i></a>
 
-			<a href="<?php echo $this->webroot . 'solicitantes/view/' . $solicitante['Solicitante']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-search"></i></a>
+			<a title="Ver Ficha" href="<?php echo $this->webroot . 'solicitantes/view/' . $solicitante['Solicitante']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-search"></i></a>
 
-			<a target="_blank" href="<?php echo $this->webroot . 'solicitantes/pdf_solicitud/' . $solicitante['Estudiante']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-print"></i></a>
+			<a title="Descargar PDF" target="_blank" href="<?php echo $this->webroot . 'solicitantes/pdf_solicitud/' . $solicitante['Estudiante']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-print"></i></a>
 			
 		</td>
 	</tr>

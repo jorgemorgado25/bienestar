@@ -2,7 +2,7 @@
             $(document).ready(function()
             {
                 $('#dataTables-example').DataTable({
-                	"order": [[ 1, "desc" ]]
+                	"order": [[ 0, "desc" ]]
                 });
             });
         </script>
@@ -40,7 +40,7 @@
 			<td><?php echo $audi['Auditoria']['descripcion']?></td>
 			<td><?php echo $audi['Auditoria']['created']?></td>
 			<td class="text-center">
-				<a href="<?php echo $this->webroot . $audi['Auditoria']['url'] . $audi['Auditoria']['resourse'] ?>" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></a>			
+				<a title="Ver" href="<?php echo $this->webroot . $audi['Auditoria']['url'] . $audi['Auditoria']['resourse'] ?>" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></a>			
 			</td>
 		</tr>
 	<?php endforeach; ?>
