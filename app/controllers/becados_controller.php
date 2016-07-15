@@ -37,9 +37,43 @@ class BecadosController extends AppController {
 		)));
 	}
 
+	function edit_profile($estudiante_id)
+	{
+		if (!empty($this->data))
+		{
+			$this->data['fecha_nac'] = $this->Fechas->fechaAbase($this->data['fecha_nac']);
+			
+			$this->Estudiante->read(null, $this->data['estudiante_id']);
+			$this->data['id'] = $this->data['estudiante_id'];
+			$this->Estudiante->save($this->data);
+
+			$this->Academico->read(null, $this->data['academico_id']);
+			$this->data['id'] = $this->data['academico_id'];
+			$this->Academico->save($this->data);
+
+			$this->Session->setFlash('
+			<div class="alert alert-success text-center" role="alert">
+				Datos modificados exitosamente
+			</div>
+			');
+			$this->redirect(array('action' => 'view',$this->data['becado_id']));
+		}
+		$this->data = $this->Estudiante->read(null, $estudiante_id);
+		$ac = $this->Academico->ffEstudianteId($estudiante_id);
+		$est = $this->Estudiante->read(null, $estudiante_id);
+		$carreras = $this->Academico->Carrera->find('list');
+		$this->Becado->recursive = -1;
+		$becado = $this->Becado->find('first',array(
+			'conditions'=>array('Becado.estudiante_id' => $estudiante_id)
+		));
+
+		$this->set(compact('ac','est','carreras','becado'));
+	}
+
 	function buscar_cedula()
 	{
-		if (!empty($this->data)) {
+		if (!empty($this->data))
+		{
 			$estudiante = $this->Estudiante->ffCedula($this->data['cedula']);
 			if($estudiante)
 			{
@@ -128,6 +162,11 @@ class BecadosController extends AppController {
 	    		array('Becado.id' => $this->data['becado_id'])
 			);
 			$this->Audi->reg($this->Session->read('user.User.id'), 'Becados','update_dependencia',$this->data['becado_id'],$this->Session->read('user.User.login'), 'becados/view/', 'Beneficiado dependencia modificada');
+			$this->Session->setFlash('
+			<div class="alert alert-success text-center" role="alert">
+				Status actualizado exitosamente
+			</div>
+			');
 			$this->redirect(array('action' => 'view', $this->data['becado_id']));
 		}
 	}
@@ -152,6 +191,11 @@ class BecadosController extends AppController {
 				array('Becado.id' => $this->data['becado_id'])
 			);
 			$this->Audi->reg($this->Session->read('user.User.id'), 'Becados','update_activo',$this->data['becado_id'],$this->Session->read('user.User.login'), 'becados/view/', 'Beneficiado historial activo modificado');
+			$this->Session->setFlash('
+			<div class="alert alert-success text-center" role="alert">
+				Status actualizado exitosamente
+			</div>
+			');
 			$this->redirect(array('action' => 'view', $this->data['becado_id']));
 		}
 		
@@ -192,6 +236,11 @@ class BecadosController extends AppController {
 				array('Becado.id' => $this->data['becado_id'])
 			);
 			$this->Audi->reg($this->Session->read('user.User.id'), 'Becados','update_culminado',$this->data['becado_id'],$this->Session->read('user.User.login'), 'becados/view/', 'Beneficiado historial culminado modificado');
+			$this->Session->setFlash('
+			<div class="alert alert-success text-center" role="alert">
+				Status actualizado exitosamente
+			</div>
+			');
 			$this->redirect(array('action' => 'view', $this->data['becado_id']));
 		}
 	}

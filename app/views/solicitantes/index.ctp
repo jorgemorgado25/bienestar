@@ -1,6 +1,18 @@
 <script type="text/javascript" charset="utf-8">
 
-	$(document).ready(function() {
+	$(document).ready(function()
+	{
+
+		$(".btn").click(function() {
+    if($("#collapseme").hasClass("out")) {
+        $("#collapseme").addClass("in");
+        $("#collapseme").removeClass("out");
+    } else {
+        $("#collapseme").addClass("out");
+        $("#collapseme").removeClass("in");
+    }
+});
+
 		$('#dataTable').DataTable({
 			"columnDefs": [{
 			"targets": [0],
@@ -32,7 +44,7 @@
 			<th>Código</th>
 			<th>P</th>
 			<th>Fecha</th>
-			<th width=130px>Acciones</th>
+			<th width=165px>Acciones</th>
 		</tr>
 	</thead>
 	<?php

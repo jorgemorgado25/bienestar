@@ -19,9 +19,10 @@ class Academico extends AppModel {
 		)
 	);
 
-	function ffEstudianteId($id){
-		$es=$this->find('first',array(
-			'conditions'=>array('Academico.estudiante_id'=>$id)
+	function ffEstudianteId($id)
+	{
+		$es = $this->find('first',array(
+			'conditions'=>array('Academico.estudiante_id' => $id)
 		));
 		return $es;
 	}

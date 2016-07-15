@@ -269,7 +269,7 @@ class NominasController extends AppController {
 				
 				$this->Session->setFlash('
 				<div class="alert alert-success text-center" role="alert">
-					Nómina creada exitosamente
+					Pagos registrados exitosamente
 				</div>');
 				$this->redirect(array('controller' => 'nominas', 'action' => 'index'));
 				

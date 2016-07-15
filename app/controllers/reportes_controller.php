@@ -36,6 +36,32 @@ class ReportesController extends AppController {
 		$this->set(compact('mes', 'ano', 't_m_ayudantia', 't_f_ayudantia', 't_f_bolsa', 't_m_bolsa', 't_f_preparaduria', 't_m_preparaduria'));
 	}
 
+	function total_nucleo()
+	{
+		if (!empty($this->data))
+		{
+			$this->redirect(array('action' => 'pdf_total_nucleo', $this->data['mes'], $this->data['ano'], $this->data['nucleo_id'], $this->data['dependencia_id']));
+		}
+		$meses = $this->Fechas->varMeses();
+		$nucleos = $this->Nucleo->find('list');
+		$this->set(compact('meses','nucleos'));
+	}
+
+	function pdf_total_nucleo($mes, $ano, $nucleo, $dependencia)
+	{
+		$t_m_ayudantia = $this->Nomina->query("select COUNT(nominas.id) as total FROM nominas JOIN estudiantes ON estudiantes.id = nominas.estudiante_id where year(nominas.fecha) = " . $ano . " and month(fecha) = " . $mes . " and tipo_id = 1 and estudiantes.genero = 'm'" . " and nucleo_id =" . $nucleo . " and dependencia_id = " . $dependencia);
+		$t_f_ayudantia = $this->Nomina->query("select COUNT(nominas.id) as total FROM nominas JOIN estudiantes ON estudiantes.id = nominas.estudiante_id where year(nominas.fecha) = " . $ano . " and month(fecha) = " . $mes . " and tipo_id = 1 and estudiantes.genero = 'f'" . " and nucleo_id =" . $nucleo . " and dependencia_id = " . $dependencia);
+		$t_f_bolsa = $this->Nomina->query("select COUNT(nominas.id) as total FROM nominas JOIN estudiantes ON estudiantes.id = nominas.estudiante_id where year(nominas.fecha) = " . $ano . " and month(fecha) = " . $mes . " and tipo_id = 2 and estudiantes.genero = 'f'" . " and nucleo_id =" . $nucleo . " and dependencia_id = " . $dependencia);
+		$t_m_bolsa = $this->Nomina->query("select COUNT(nominas.id) as total FROM nominas JOIN estudiantes ON estudiantes.id = nominas.estudiante_id where year(nominas.fecha) = " . $ano . " and month(fecha) = " . $mes . " and tipo_id = 2 and estudiantes.genero = 'm'" . " and nucleo_id =" . $nucleo . " and dependencia_id = " . $dependencia);
+		$t_f_preparaduria = $this->Nomina->query("select COUNT(nominas.id) as total FROM nominas JOIN estudiantes ON estudiantes.id = nominas.estudiante_id where year(nominas.fecha) = " . $ano . " and month(fecha) = " . $mes . " and tipo_id = 3 and estudiantes.genero = 'f'" . " and nucleo_id =" . $nucleo . " and dependencia_id = " . $dependencia);
+		$t_m_preparaduria = $this->Nomina->query("select COUNT(nominas.id) as total FROM nominas JOIN estudiantes ON estudiantes.id = nominas.estudiante_id where year(nominas.fecha) = " . $ano . " and month(fecha) = " . $mes . " and tipo_id = 3 and estudiantes.genero = 'm'" . " and nucleo_id =" . $nucleo . " and dependencia_id = " . $dependencia);
+		$mes = $this->Fechas->getMes($mes);
+		$dependencia = $this->Nucleo->Dependencia->find('first',array(
+			'conditions' => array('Dependencia.id' => $dependencia)
+		));
+		$this->set(compact('mes', 'ano', 't_m_ayudantia', 't_f_ayudantia', 't_f_bolsa', 't_m_bolsa', 't_f_preparaduria', 't_m_preparaduria', 'dependencia'));
+	}
+
 	function nomina_txt()
 	{
 		if (!empty($this->data))

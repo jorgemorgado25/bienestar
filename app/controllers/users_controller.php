@@ -1,5 +1,6 @@
 <?php
-class UsersController extends AppController {
+class UsersController extends AppController
+{
 
 	var $name = 'users';
 	var $helpers = array('Html', 'Form', 'Javascript','Ajax');
@@ -9,28 +10,26 @@ class UsersController extends AppController {
 	function beforeFilter()
 	{
 		$this->layout='admin';
-		/*if($this->Session->check('administrador') == false){
-			$this->redirect(array('controller'=>'sitio','action'=>'admin'));
-		}
-		if($this->Session->read('administrador.Administrador.tipo') < 3){
-			$this->redirect(array('controller'=>'admin','action'=>'index'));
-		}*/
-		if($this->Session->check('user') == false){
+		if($this->Session->check('user') == false)
+		{
 			$this->redirect(array('controller'=>'front','action'=>'login'));
 		}
-		if($this->Session->read('user.User.nivel') == 1){
+		if($this->Session->read('user.User.nivel') == 1)
+		{
 			$this->redirect(array('controller'=>'solicitantes','action'=>'index'));
 		}
 	}
 
-	function index(){
+	function index()
+	{
 		$this->User->recursive = -1;
 		$this->set('administradores', $this->User->find('all'));
 	}
 	
 	function add()
 	{
-		if (!empty($this->data))		{
+		if (!empty($this->data))
+		{
 
 			$user = $this->User->find('first',array(
 				'conditions' => array('User.login' => $this->data['User']['login'])
@@ -66,7 +65,6 @@ class UsersController extends AppController {
 		}
 		if (!empty($this->data))
 		{
-			//$this->User->create();
 			if ($this->User->save($this->data))
 			{
 				$user = $this->User->ffId($this->data['User']['id']);
@@ -77,7 +75,8 @@ class UsersController extends AppController {
 				$this->Session->setFlash(__('The usuario could not be saved. Please, try again.', true));
 			}
 		}
-		if (empty($this->data)) {
+		if (empty($this->data))
+		{
 			$this->data = $this->User->read(null, $id);
 		}
 	}

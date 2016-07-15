@@ -228,7 +228,7 @@ class SolicitantesController extends AppController {
 			$this->data['id'] = $this->data['estudiante_id'];
 			$this->Estudiante->save($this->data);
 
-			$this->Academico->read(null, $this->data['estudiante_id']);
+			$this->Academico->read(null, $this->data['academico_id']);
 			$this->data['id'] = $this->data['academico_id'];
 			$this->Academico->save($this->data);
 
@@ -251,10 +251,11 @@ class SolicitantesController extends AppController {
 			$ac = $this->Academico->ffEstudianteId($this->data['Estudiante']['id']);
 		}
 		$carreras = $this->Academico->Carrera->find('list');
-		$this->set(compact('estudiantes','carreras','ac', 'est'));
+		$this->set(compact('carreras', 'ac', 'est'));
 	}
 
-	function delete($id = null) {
+	function delete($id = null)
+	{
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid id for solicitante', true));
 			$this->redirect(array('action'=>'index'));

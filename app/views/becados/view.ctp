@@ -1,12 +1,13 @@
-<?php
-	//echo $this->Html->script('becados');
-	//echo $this->Element('modal-becado');
-?>
 <h2>Detalle de Beneficiado</h2><br/>
 
+<?php
+	if($this->Session->check('Message.flash')):
+		echo $this->Session->flash();
+	endif;
+?>
 
 <div class="panel panel-default">
-	<div class="panel-heading"><h4>Datos del Estudiante</h4></div>
+	<div class="panel-heading"><h4>Datos del Estudiante &nbsp;<a href="<?php echo $this->webroot . 'becados/edit_profile/' . $est['Estudiante']['id']?>" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-pencil"></i></a></h4></div>
 		<table class="table table-striped">
 			<tr>
 				<th>Cédula</th>
@@ -56,10 +57,11 @@
 			<tr>
 				<td>
 					<?php 
-						if($est['Estudiante']['residenciado']=='0'){
-							echo 'Sí';
-						}else{
+						if($est['Estudiante']['residenciado']==0)
+						{
 							echo 'No';
+						}else{
+							echo 'Sí';
 						}
 					?>
 				</td>

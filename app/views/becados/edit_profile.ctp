@@ -3,9 +3,9 @@
 	echo $this->Html->script('validar_datos_beneficiados');
 ?>
 
-<h2>Editar Solicitud</h2><br>
+<h2>Editar Datos del Estudiante</h2><br>
 
-<form id="frm-registrar" action="<?php echo $html->url('/solicitantes/edit'); ?>" method="post">
+<form id="frm-registrar" action="" method="post">
 
 <div style="display:none" id="msj1" class="alert alert-danger text-center" role="alert"></div>
 
@@ -98,7 +98,7 @@
 					<label>Posee alguna discapacidad</label>
 					<div class="input-group">
 						<span class="input-group-addon">
-						<input id="chkdiscapacidad" type="checkbox" name="data[discapacidad]">
+						<input id="chkdiscapacidad" type="checkbox">
 						</span>
 						<input type="text" value="<?php echo $this->data['Estudiante']['des_discapacidad'] ?>" id="des_discapacidad" name="data[des_discapacidad]" class="form-control">
 					</div>
@@ -109,7 +109,7 @@
 					<label>Pertenece a alguna Etnia Indígena</label>
 					<div class="input-group">
 						<span class="input-group-addon">
-						<input id="chketnia" type="checkbox" name="data[etnia]">
+						<input id="chketnia" type="checkbox">
 						</span>
 						<input type="text" value="<?php echo $this->data['Estudiante']['nombre_etnia'] ?>" id="nombre_etnia" name="data[nombre_etnia]" class="form-control" >
 					</div>
@@ -120,13 +120,12 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Residenciado</label>&nbsp
-					<input type="checkbox" id="residenciado" name="data[residenciado]" />
+					<input type="checkbox" id="residenciado"/>
 				</div>
 			</div>
-		</div>
+		</div>		
 	</div>
 </div>
-
 
 <div class="panel panel-default">
 	<div class="panel-heading">Datos Académicos</div>
@@ -185,57 +184,32 @@
 	</div>
 </div>
 
-<div class="panel panel-default">
-	<div class="panel-heading">Datos de la Solicitud</div>
-	<div class="panel-body">
-		
-		<div class="row">
-			<div class="col-md-6">
-				<div class="form-group">
-					<label>Código</label>
-					<input class="form-control" id="codigo-edit" value="<?php echo $this->data['Solicitante']['codigo'] ?>" name="data[codigo]" placeholder="Escribe el código" type="text" required >
-				</div>	
-			</div>
-			<div class="col-md-6">
-				<div class="form-group">
-					<label>Prioridad</label>
-					<select class="form-control" id="prioridad" name="data[prioridad]" required placehorder="Selecciona la prioridad">
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-					</select>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
 <div style="display:none" id="msj2" class="alert alert-danger text-center" role="alert"></div>
 
-<button id="btn-validar" type="button" class="btn btn-primary">
-	<i class="fa fa-save fa-fw"></i> Guardar
-</button>
+	<input type="hidden" name="data[estudiante_id]" value="<?php echo $this->data['Estudiante']['id'] ?>">
+	<input type="hidden" name="data[becado_id]" value="<?php echo $becado['Becado']['id'] ?>">
+	<input type="hidden" name="data[academico_id]" value="<?php echo $ac['Academico']['id'] ?>">
 
-<button style="display:none" id="btnEnviar" type="submit" class="btn btn-primary">
-	<i class="fa fa-save fa-fw"></i> Guardar
-</button>
-<br>
-
-<input value="<?php echo $this->data['Estudiante']['residenciado'] ?>" type="hidden" id="hidden-residenciado" name="data[residenciado]">
+	<input value="<?php echo $this->data['Estudiante']['residenciado'] ?>" type="hidden" id="hidden-residenciado" name="data[residenciado]">
 
 	<input value="<?php echo $this->data['Estudiante']['etnia'] ?>" type="hidden" id="hidden-etnia" name="data[etnia]">
 
 	<input value="<?php echo $this->data['Estudiante']['discapacidad'] ?>" type="hidden" id="hidden-discapacidad" name="data[discapacidad]">
-	
-<input type="hidden" name="data[estudiante_id]" value="<?php echo $est['Estudiante']['id'] ?>">
-<input type="hidden" name="data[academico_id]" value="<?php echo $ac['Academico']['id'] ?>">
 
-<?php echo $form->hidden('id' ,array('value' => $this->data['Solicitante']['id'])); ?>
-</form><br>
+
+	<button style="display:none" id="btnEnviar" type="submit" class="btn btn-primary">
+			<i class="fa fa-save fa-fw"></i> Guardar
+	</button>
+	<button id="btn-validar" type="button" class="btn btn-primary">
+	<i class="fa fa-save fa-fw"></i> Guardar
+</button>
+</form>
+
+<br>
 
 <script type="text/javascript">
-	$(document).ready(function() {
-
+	$(document).ready(function()
+	{		
 		$("#residenciado").click(function()
 		{
 			if($('#residenciado').prop('checked'))

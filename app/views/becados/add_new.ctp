@@ -48,7 +48,7 @@
 				<div class="form-group">
 					<label>Fecha de Nacimiento</label>
 					<div class="input-group">
-						<input pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}" name="data[fecha_nac]" id="fecha_nac" type="date" class="form-control" required placeholder="dd-mm-aaaa">
+						<input pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}" name="data[fecha_nac]" id="fecha_nac" type="text" class="form-control" required placeholder="dd-mm-aaaa">
 						<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
 					</div>
 				</div>

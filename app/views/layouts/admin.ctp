@@ -184,8 +184,9 @@
                                 <li>
                                     <a href="<?php echo $this->webroot . 'reportes/total_general' ?>"><i class='glyphicon glyphicon-menu-right'></i> <small>Total General de Beneficiados</small></a>
                                 </li>
-                                
-                                
+                                <li>
+                                    <a href="<?php echo $this->webroot . 'reportes/total_nucleo' ?>"><i class='glyphicon glyphicon-menu-right'></i> <small>Total Beneficiados por Núcleo</small></a>
+                                </li>                                
                             </ul>
                         </li>
                         <?php
