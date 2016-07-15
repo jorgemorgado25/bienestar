@@ -39,8 +39,12 @@ class BecadosController extends AppController {
 
 	function edit_profile($estudiante_id)
 	{
+		$becado = $this->Becado->find('first',array(
+			'conditions'=>array('Becado.estudiante_id' => $estudiante_id)
+		));
 		if (!empty($this->data))
 		{
+
 			$this->data['fecha_nac'] = $this->Fechas->fechaAbase($this->data['fecha_nac']);
 			
 			$this->Estudiante->read(null, $this->data['estudiante_id']);
@@ -50,7 +54,7 @@ class BecadosController extends AppController {
 			$this->Academico->read(null, $this->data['academico_id']);
 			$this->data['id'] = $this->data['academico_id'];
 			$this->Academico->save($this->data);
-
+			$this->Audi->reg($this->Session->read('user.User.id'), 'Becados','edit_profile',$this->data['becado_id'],$this->Session->read('user.User.login'), 'becados/view/', 'Estudiante datos modificados');
 			$this->Session->setFlash('
 			<div class="alert alert-success text-center" role="alert">
 				Datos modificados exitosamente
@@ -63,9 +67,7 @@ class BecadosController extends AppController {
 		$est = $this->Estudiante->read(null, $estudiante_id);
 		$carreras = $this->Academico->Carrera->find('list');
 		$this->Becado->recursive = -1;
-		$becado = $this->Becado->find('first',array(
-			'conditions'=>array('Becado.estudiante_id' => $estudiante_id)
-		));
+		
 
 		$this->set(compact('ac','est','carreras','becado'));
 	}

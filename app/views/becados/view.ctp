@@ -7,7 +7,7 @@
 ?>
 
 <div class="panel panel-default">
-	<div class="panel-heading"><h4>Datos del Estudiante &nbsp;<a href="<?php echo $this->webroot . 'becados/edit_profile/' . $est['Estudiante']['id']?>" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-pencil"></i></a></h4></div>
+	<div class="panel-heading"><h4>Datos del Estudiante &nbsp;<a title="Editar" href="<?php echo $this->webroot . 'becados/edit_profile/' . $est['Estudiante']['id']?>" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-pencil"></i></a></h4></div>
 		<table class="table table-striped">
 			<tr>
 				<th>Cédula</th>

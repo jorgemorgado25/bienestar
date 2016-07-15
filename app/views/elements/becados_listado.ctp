@@ -50,7 +50,7 @@
 			<?php echo $becado['Tipo']['nombre']?>
 		</td>
 		<td>
-			<a title="Editar" href="<?php echo $this->webroot . 'becados/view/' . $becado['Becado']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
+			<a title="Ver" href="<?php echo $this->webroot . 'becados/view/' . $becado['Becado']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-search"></i></a>
 		</td>
 	</tr>
 <?php endforeach; ?>
