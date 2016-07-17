@@ -17,7 +17,8 @@ class AppController extends Controller{
 	(
 		'10' => 'No consignó recaudos',
 		'11' => 'Ausente',
-		'12' => 'Otro'
+		'12' => 'Otro',
+		'13' => 'Desactivado'
 	);
 
 	/*------- Culminado Beca ----------*/

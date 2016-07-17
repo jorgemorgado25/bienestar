@@ -119,6 +119,9 @@
                                 </li>
                                 <li>
                                     <a href="<?php echo $this->webroot . 'becados/buscar_cedula/' ?>"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo $this->webroot . 'becados/desactivar_todos/' ?>"><span class="glyphicon glyphicon-ban-circle"></span> Desactivar Todos</a>
                                 </li>                                
                             </ul>
                         </li>

@@ -2,7 +2,7 @@
 class BecadosController extends AppController {
 
 	var $name = 'Becados';
-	var $uses = array('Becado', 'Estudiante','Academico','Nucleo','Dependencia','Solicitante');
+	var $uses = array('Becado', 'Estudiante','Academico','Nucleo','Dependencia','Solicitante','Tipo');
 
 	function beforeFilter()
 	{
@@ -35,6 +35,52 @@ class BecadosController extends AppController {
 		$this->set('becados', $this->Becado->find('all',array(
 			'conditions'=>array('Becado.culminado' => '1')
 		)));
+	}
+
+	function desactivar_todos()
+	{
+		$tipos = $this->Tipo->find('list');
+		$this->set(compact('tipos'));
+		if (!empty($this->data))
+		{
+			$this->Becado->recursive = -1;
+			$becados = $this->Becado->find('all',array(
+				'conditions' => array(
+					'Becado.tipo_id' => $this->data['tipo_id'],
+					'Becado.activo' => 1,
+					'Becado.culminado' => 0
+				)
+			));
+
+			for ($i = 0; $i < count($becados); $i++)
+			{
+				$data['becado_id'] = $becados[$i]['Becado']['id'];
+				$data['activo'] = 0;
+				$data['status'] = 13;
+				$data['observaciones'] = 'Desactivado por el Administrador del sistema. Debe consignar recaudos anuales.';
+				$this->Becado->Activo->create();
+				$this->Becado->Activo->save($data);
+			}
+			$this->Becado->updateAll(
+				array(
+					'Becado.activo' => 0
+					),
+				array('Becado.activo' => 1)
+			);
+
+			$this->Tipo->recursive = -1;
+			$tipo = $this->Tipo->find('first', array(
+				'conditions' => array('Tipo.id' => $this->data['tipo_id'])
+			));
+
+			$this->Audi->reg($this->Session->read('user.User.id'), 'Becados', 'desactivar_todos', 0,$this->Session->read('user.User.login'), 'becados/inactivos/', 'Beneficiados: ' . $tipo['Tipo']['nombre'] . ' - desactivar todos');
+			$this->Session->setFlash('
+			<div class="alert alert-success text-center" role="alert">
+				Beneficiados desactivados exitosamente
+			</div>
+			');
+			$this->redirect(array('action' => 'inactivos'));
+		}
 	}
 
 	function edit_profile($estudiante_id)
@@ -173,7 +219,7 @@ class BecadosController extends AppController {
 		}
 	}
 
-	//Actualizo el Histotiral de activo
+	//Actualizo el Historial de activo
 	function update_activo($becado_id = null)
 	{
 		$becado = $this->Becado->read(null, $becado_id);
