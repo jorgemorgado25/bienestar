@@ -120,9 +120,14 @@
                                 <li>
                                     <a href="<?php echo $this->webroot . 'becados/buscar_cedula/' ?>"><i class='fa fa-plus fa-fw'></i> Agregar</a>
                                 </li>
+                                <?php
+                                if($session->read("user.User.nivel") == 2)
+                                {
+                                ?>
                                 <li>
                                     <a href="<?php echo $this->webroot . 'becados/desactivar_todos/' ?>"><span class="glyphicon glyphicon-ban-circle"></span> Desactivar Todos</a>
-                                </li>                                
+                                </li>  
+                                <?php } ?>                              
                             </ul>
                         </li>
                         <li>
