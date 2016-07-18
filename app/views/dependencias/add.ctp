@@ -1,10 +1,10 @@
 <script>
 	$(document).ready(function()
 	{
-		$("#supervisor").alpha({
+		$("#supervisor, #dependencia").alpha({
 			allow : '.'
 		});
-		$("#dependencia").alpha();
+		//$("#dependencia").alpha();
 	});
 </script>
 

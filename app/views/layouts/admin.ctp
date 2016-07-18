@@ -217,7 +217,7 @@
                             
                         </li>
                         <li>
-                            <a href="http://localhost/respaldar"><i class="glyphicon glyphicon-download-alt"></i> &nbsp; Respaldar DB</a>
+                            <a href="http://localhost/respaldar/index.php"><i class="glyphicon glyphicon-download-alt"></i> &nbsp; Respaldar DB</a>
                             
                         </li>
                         <?php } ?>
