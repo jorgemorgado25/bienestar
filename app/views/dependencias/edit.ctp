@@ -34,7 +34,7 @@ echo $form->hidden('id');
 							'class' => 'form-control',
 							'id' => 'cedula',
 							'required' => 'required',
-							'maxlength' => '20',
+							'maxlength' => '60',
 							'placehorder' => 'Escribe el nombre de la dependencia'
 						));
 					?>
@@ -50,6 +50,7 @@ echo $form->hidden('id');
 							'class'=>'form-control',
 							'id'=>'supervisor',
 							'required'=>'required',
+							'maxlength' => '60',
 							'placehorder'=>'Escribe del supervisor'
 						));
 					?>

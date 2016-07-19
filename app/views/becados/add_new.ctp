@@ -33,13 +33,13 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Nombres</label>
-					<input class="form-control" id="nombres" name="data[nombres]" placeholder="Escribe los nombres" type="text" required >
+					<input class="form-control" id="nombres" name="data[nombres]" placeholder="Escribe los nombres" type="text" required maxlength="60">
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Apellidos</label>
-					<input class="form-control" id="apellidos" name="data[apellidos]" placeholder="Escribe los apellidos" type="text" required >
+					<input class="form-control" id="apellidos" name="data[apellidos]" placeholder="Escribe los apellidos" type="text" required maxlength="60">
 				</div>
 			</div>
 		</div>		
@@ -48,7 +48,7 @@
 				<div class="form-group">
 					<label>Fecha de Nacimiento</label>
 					<div class="input-group">
-						<input pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}" name="data[fecha_nac]" id="fecha_nac" type="text" class="form-control" required placeholder="dd-mm-aaaa">
+						<input maxlength="10" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}" name="data[fecha_nac]" id="fecha_nac" type="text" class="form-control" required placeholder="dd-mm-aaaa">
 						<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
 					</div>
 				</div>
@@ -70,13 +70,13 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Teléfono</label>
-					<input class="form-control" id="telefono" name="data[telefono]" placeholder="Escribe el teléfono" type="text" required>
+					<input class="form-control" id="telefono" name="data[telefono]" placeholder="Escribe el teléfono" type="text" required maxlength="20">
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Correo Electrónico</label>
-					<input class="form-control" id="email" name="data[email]" placeholder="Escribe el correo electrónico" type="email" required >
+					<input class="form-control" id="email" name="data[email]" placeholder="Escribe el correo electrónico" type="email" required maxlength="80">
 				</div>
 			</div>
 		</div>
@@ -85,7 +85,7 @@
 			<div class="col-md-12">
 				<div class="form-group">
 					<label>Dirección</label>
-					<input class="form-control" id="direccion" name="data[direccion]" placeholder="Escribe la dirección" type="text" required>
+					<input class="form-control" id="direccion" name="data[direccion]" placeholder="Escribe la dirección" type="text" required maxlength="200">
 				</div>
 			</div>
 		</div>
@@ -98,7 +98,7 @@
 						<span class="input-group-addon">
 						<input id="chkdiscapacidad" type="checkbox" name="data[discapacidad]">
 						</span>
-						<input type="text" id="des_discapacidad" name="data[des_discapacidad]" class="form-control">
+						<input type="text" id="des_discapacidad" name="data[des_discapacidad]" class="form-control" maxlength="60">
 					</div>
 				</div>
 			</div>
@@ -109,7 +109,7 @@
 						<span class="input-group-addon">
 						<input id="chketnia" type="checkbox" name="data[etnia]">
 						</span>
-						<input type="text" id="nombre_etnia" name="data[nombre_etnia]" class="form-control" >
+						<input type="text" id="nombre_etnia" name="data[nombre_etnia]" class="form-control" maxlength="60">
 					</div>
 				</div>
 			</div>			
@@ -146,7 +146,7 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Cohorte</label>
-					<input class="form-control" id="cohorte" name="data[cohorte]" placeholder="Escribe la cohorte" type="text" required maxlength=5>
+					<input class="form-control" id="cohorte" name="data[cohorte]" placeholder="Escribe la cohorte" type="text" required maxlength=6>
 				</div>
 			</div>
 		</div>
@@ -155,13 +155,13 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Año o Semestre</label>
-					<input class="form-control" id="semestre" name="data[semestre]" placeholder="Escribe los datos" type="text" required >
+					<input class="form-control" id="semestre" name="data[semestre]" placeholder="Escribe los datos" type="text" required maxlength="20">
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Promedio</label>
-					<input class="form-control" id="promedio" name="data[promedio]" placeholder="Escribe el promedio" type="text" required >
+					<input class="form-control" id="promedio" name="data[promedio]" placeholder="Escribe el promedio" type="text" required maxlength="4">
 				</div>
 			</div>
 		</div>
@@ -170,13 +170,13 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Número de materias</label>
-					<input class="form-control" id="n_materias" name="data[n_materias]" placeholder="Escribe el número de materias" type="text" required >
+					<input class="form-control" id="n_materias" name="data[n_materias]" placeholder="Escribe el número de materias" type="text" required maxlength="3">
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Número de materias aplazadas</label>
-					<input class="form-control" id="n_aplazadas" name="data[n_aplazadas]" placeholder="Escribe el número de aplazadas" type="text" required >
+					<input class="form-control" id="n_aplazadas" name="data[n_aplazadas]" placeholder="Escribe el número de aplazadas" type="text" required maxlength="3">
 				</div>
 			</div>
 		</div>		

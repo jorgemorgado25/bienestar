@@ -40,7 +40,7 @@
 			<div class="col-md-4">
 				<div class="form-group">
 					<label>Supervisor</label>
-					<input class="form-control" id="supervisor" name="data[supervisor]" placeholder="Escribe el nombre del supervisor" type="text" required>
+					<input maxlength="100" class="form-control" id="supervisor" name="data[supervisor]" placeholder="Escribe el nombre del supervisor" type="text" required>
 				</div>
 			</div>
 		</div>

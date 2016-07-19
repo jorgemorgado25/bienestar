@@ -22,6 +22,7 @@
 							'div'=>false,
 							'class'=>'form-control',
 							'id'=>'nombre',
+							'maxlength'=>'60',
 							'required'=>'required',
 							'placehorder'=>'Escribe el nombre del núcleo'
 						));

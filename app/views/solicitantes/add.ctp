@@ -15,7 +15,7 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Cédula</label>
-					<input class="form-control" id="cedula" name="data[cedula]" placeholder="Escribe la cédula" type="text" required autofocus maxlength=8>
+					<input class="form-control" id="cedula" name="data[cedula]" placeholder="Escribe la cédula" type="text" required autofocus maxlength="8">
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -147,7 +147,7 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Cohorte</label>
-					<input class="form-control" id="cohorte" name="data[cohorte]" placeholder="Escribe la cohorte" type="text" required maxlength=5>
+					<input class="form-control" id="cohorte" name="data[cohorte]" placeholder="Escribe la cohorte" type="text" required maxlength=6>
 				</div>
 			</div>
 		</div>
@@ -162,7 +162,7 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Promedio</label>
-					<input class="form-control" id="promedio" name="data[promedio]" placeholder="Escribe el promedio" type="text" required >
+					<input class="form-control" id="promedio" name="data[promedio]" placeholder="Escribe el promedio" type="text" required maxlength="4">
 				</div>
 			</div>
 		</div>

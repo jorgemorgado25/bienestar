@@ -1,3 +1,14 @@
+<script>
+	$(document).ready(function()
+	{
+			$('#cedula, #ano').numeric({
+	    	allowMinus   : false,
+	    	allowThouSep : false,
+	    	allowDecSep  : false
+    	});	
+	});
+</script>
+
 <h2>Pago por Alumno</h2>
 <br>
 
@@ -15,13 +26,13 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label for="">Cédula</label>
-					<input name="data[cedula]" type="text" class="form-control">
+					<input name="data[cedula]" id="cedula" type="text" class="form-control">
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
 					<label for="">Año</label>
-					<input required="required" name="data[ano]" maxlength=4 id="" type="text" class="form-control" required>
+					<input required="required" name="data[ano]" maxlength=4 id="ano" type="text" class="form-control" required>
 				</div>
 			</div>
 		</div>

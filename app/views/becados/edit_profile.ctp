@@ -1,6 +1,7 @@
 <?php
 	echo $this->Html->script('funciones');
 	echo $this->Html->script('validar_datos_beneficiados');
+	echo $this->Html->script('validar_input_fecha');
 ?>
 
 <h2>Editar Datos del Estudiante</h2><br>
@@ -16,7 +17,7 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Cédula</label>
-					<input class="form-control" value="<?php echo $this->data['Estudiante']['cedula'] ?>" id="cedula-edit" name="data[cedula]" placeholder="Escribe la cédula" type="text" required>
+					<input class="form-control" value="<?php echo $this->data['Estudiante']['cedula'] ?>" id="cedula-edit" name="data[cedula]" placeholder="Escribe la cédula" type="text" required maxlength="8">
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -34,13 +35,13 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Nombres</label>
-					<input class="form-control" value="<?php echo $this->data['Estudiante']['nombres'] ?>" id="nombres" name="data[nombres]" placeholder="Escribe los nombres" type="text" required >
+					<input class="form-control" value="<?php echo $this->data['Estudiante']['nombres'] ?>" id="nombres" name="data[nombres]" placeholder="Escribe los nombres" type="text" required maxlength="60">
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Apellidos</label>
-					<input class="form-control" id="apellidos" value="<?php echo $this->data['Estudiante']['apellidos'] ?>" name="data[apellidos]" placeholder="Escribe los apellidos" type="text" required >
+					<input class="form-control" id="apellidos" value="<?php echo $this->data['Estudiante']['apellidos'] ?>" name="data[apellidos]" placeholder="Escribe los apellidos" type="text" required maxlength="60">
 				</div>
 			</div>
 		</div>
@@ -50,7 +51,7 @@
 				<div class="form-group">
 					<label>Fecha de Nacimiento</label>
 					<div class="input-group">
-						<input pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}" name="data[fecha_nac]" id="fecha_nac" value="<?php echo $this->Fechas->voltearFecha($this->data['Estudiante']["fecha_nac"]);?>" type="text" class="form-control" required placeholder="dd/mm/aaaa">
+						<input maxlength="10" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}" name="data[fecha_nac]" id="fecha_nac" value="<?php echo $this->Fechas->voltearFecha($this->data['Estudiante']["fecha_nac"]);?>" type="text" class="form-control" required placeholder="dd/mm/aaaa">
 						<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
 					</div>
 				</div>
@@ -72,13 +73,13 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Teléfono</label>
-					<input class="form-control" id="telefono" value="<?php echo $this->data['Estudiante']['telefono'] ?>" name="data[telefono]" placeholder="Escribe el teléfono" type="text" required>
+					<input class="form-control" id="telefono" value="<?php echo $this->data['Estudiante']['telefono'] ?>" name="data[telefono]" placeholder="Escribe el teléfono" type="text" required maxlength="20">
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Correo Electrónico</label>
-					<input class="form-control" id="email-edit" value="<?php echo $this->data['Estudiante']['email'] ?>" name="data[email]" placeholder="Escribe el correo electrónico" type="email" required >
+					<input class="form-control" id="email-edit" value="<?php echo $this->data['Estudiante']['email'] ?>" name="data[email]" placeholder="Escribe el correo electrónico" type="email" required maxlength="80">
 				</div>
 			</div>
 		</div>
@@ -87,7 +88,7 @@
 			<div class="col-md-12">
 				<div class="form-group">
 					<label>Dirección</label>
-					<input class="form-control" id="direccion" name="data[direccion]" value="<?php echo $this->data['Estudiante']['direccion'] ?>" placeholder="Escribe la dirección" type="text" required>
+					<input class="form-control" id="direccion" name="data[direccion]" value="<?php echo $this->data['Estudiante']['direccion'] ?>" placeholder="Escribe la dirección" type="text" required maxlength="200">
 				</div>
 			</div>
 		</div>
@@ -100,7 +101,7 @@
 						<span class="input-group-addon">
 						<input id="chkdiscapacidad" type="checkbox">
 						</span>
-						<input type="text" value="<?php echo $this->data['Estudiante']['des_discapacidad'] ?>" id="des_discapacidad" name="data[des_discapacidad]" class="form-control">
+						<input type="text" value="<?php echo $this->data['Estudiante']['des_discapacidad'] ?>" id="des_discapacidad" name="data[des_discapacidad]" class="form-control" maxlength="60">
 					</div>
 				</div>
 			</div>
@@ -111,7 +112,7 @@
 						<span class="input-group-addon">
 						<input id="chketnia" type="checkbox">
 						</span>
-						<input type="text" value="<?php echo $this->data['Estudiante']['nombre_etnia'] ?>" id="nombre_etnia" name="data[nombre_etnia]" class="form-control" >
+						<input type="text" value="<?php echo $this->data['Estudiante']['nombre_etnia'] ?>" id="nombre_etnia" name="data[nombre_etnia]" class="form-control" maxlength="60">
 					</div>
 				</div>
 			</div>
@@ -147,7 +148,7 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Cohorte</label>
-					<input class="form-control" value="<?php echo $est['Academico']['cohorte'] ?>" id="cohorte" name="data[cohorte]" placeholder="Escribe la cohorte" type="text" required >
+					<input class="form-control" value="<?php echo $est['Academico']['cohorte'] ?>" id="cohorte" name="data[cohorte]" placeholder="Escribe la cohorte" type="text" required maxlength="6">
 				</div>
 			</div>
 		</div>
@@ -162,7 +163,7 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Promedio</label>
-					<input class="form-control" value="<?php echo $est['Academico']['promedio'] ?>" id="promedio" name="data[promedio]" placeholder="Escribe el promedio" type="text" required >
+					<input class="form-control" value="<?php echo $est['Academico']['promedio'] ?>" id="promedio" name="data[promedio]" placeholder="Escribe el promedio" type="text" required maxlength="4">
 				</div>
 			</div>
 		</div>
@@ -171,13 +172,13 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Número de materias</label>
-					<input class="form-control" value="<?php echo $est['Academico']['n_materias'] ?>" id="n_materias" name="data[n_materias]" placeholder="Escribe el número de materias" type="text" required >
+					<input class="form-control" value="<?php echo $est['Academico']['n_materias'] ?>" id="n_materias" name="data[n_materias]" placeholder="Escribe el número de materias" type="text" required maxlength="3">
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Número de materias aplazadas</label>
-					<input class="form-control" value="<?php echo $est['Academico']['n_aplazadas'] ?>" id="n_aplazadas" name="data[n_aplazadas]" placeholder="Escribe el número de aplazadas" type="text" required >
+					<input class="form-control" value="<?php echo $est['Academico']['n_aplazadas'] ?>" id="n_aplazadas" name="data[n_aplazadas]" placeholder="Escribe el número de aplazadas" type="text" required maxlength="3">
 				</div>
 			</div>
 		</div>		
@@ -257,7 +258,7 @@
 		}
 		
 		$('#carreras option[value=<?php echo $ac['Academico']['carrera_id'] ?>]').attr('selected','selected');
-		$('#prioridad option[value=<?php echo $this->data['Solicitante']['prioridad'] ?>]').attr('selected','selected');
+		
 		$('#estado_civil option[value=<?php echo $est['Estudiante']['estado_civil'] ?>]').attr('selected','selected');
 		if("<?php echo $est['Estudiante']['genero'] ?>"=="m"){
 			$('#genero option[value=m]').attr('selected','selected');

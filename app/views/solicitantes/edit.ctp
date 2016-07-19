@@ -149,7 +149,7 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Cohorte</label>
-					<input class="form-control" value="<?php echo $est['Academico']['cohorte'] ?>" id="cohorte" name="data[cohorte]" placeholder="Escribe la cohorte" type="text" required maxlength="5">
+					<input class="form-control" value="<?php echo $est['Academico']['cohorte'] ?>" id="cohorte" name="data[cohorte]" placeholder="Escribe la cohorte" type="text" required maxlength="6">
 				</div>
 			</div>
 		</div>
@@ -164,7 +164,7 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Promedio</label>
-					<input class="form-control" value="<?php echo $est['Academico']['promedio'] ?>" id="promedio" name="data[promedio]" placeholder="Escribe el promedio" type="text" required >
+					<input class="form-control" value="<?php echo $est['Academico']['promedio'] ?>" id="promedio" name="data[promedio]" placeholder="Escribe el promedio" type="text" required maxlength="4">
 				</div>
 			</div>
 		</div>

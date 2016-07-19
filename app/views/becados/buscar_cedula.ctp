@@ -1,6 +1,10 @@
 <script type="text/javascript">
 	$(document).ready(function() {
-		$("#cedula").numeric("integer");
+		$("#cedula").numeric({
+			allowMinus: false,
+			allowThouSep : false,
+    		allowDecSep: false
+		});
 	});
 </script>
 <div style="margin-top:40px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">

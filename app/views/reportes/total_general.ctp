@@ -1,6 +1,10 @@
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('input').numeric("integer");
+		$('input').numeric({
+			allowMinus   : false,
+	    	allowThouSep : false,
+	    	allowDecSep  : false
+		});
 	});
 </script>
 

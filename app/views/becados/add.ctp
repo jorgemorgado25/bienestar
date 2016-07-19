@@ -5,7 +5,11 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('#ano_fin').numeric("integer");
+		$('#ano_fin').numeric({
+			allowMinus: false,
+			allowThouSep : false,
+    		allowDecSep: false
+		});
 	});
 </script>
 
@@ -93,6 +97,7 @@
 				<th>Cohorte</th>
 				<th>N. Materias</th>
 				<th>N. Aplazadas</th>
+				<th>Promedio</th>
 			</tr>
 			<tr>
 				<td>
@@ -106,6 +111,9 @@
 				</td>
 				<td>
 					<?php echo $ac['Academico']['n_aplazadas'] ?>
+				</td>
+				<td>
+					<?php echo $ac['Academico']['promedio'] ?>
 				</td>
 			</tr>
 		</table>					

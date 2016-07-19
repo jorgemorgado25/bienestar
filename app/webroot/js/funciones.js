@@ -1,12 +1,30 @@
 $(document).ready(function() {
 
-	$('#cedula, #cedula-edit, #codigo, #telefono, #n_materias, #n_aplazadas').numeric({
+	$(document).ready(function()
+	{
+		$("#cohorte").alpha({
+			allowNumeric : 'true',
+			disallow: 'qwertyuiopasdfghjklzxcvbnmñQWERTYUIOPASDFGHJKLZXCVBNMÑ',
+			allow: '-'
+		});	
+	});
+
+	$(document).ready(function()
+	{
+		$("#promedio").numeric({
+			allowMinus   : false,
+	    	allowThouSep : false,
+	    	allowDecSep: true,
+	    	allow: '.'
+		});	
+	});
+
+	$('#cedula, #cedula-edit, #codigo, #telefono, #n_materias, #n_aplazadas, #ano_fin').numeric({
     	allowMinus   : false,
     	allowThouSep : false,
     	allowDecSep: false
     });
-	$('#promedio').numeric();
-
+	
 	$("#nombres, #apellidos").alpha();
 
 	/********** ADD ***************/

@@ -33,7 +33,7 @@
 			<div class="col-md-5">
 				<div class="form-group">
 					<label>Código</label>
-					<input value=<?php echo $this->data['Carrera']['codigo']?> class="form-control" id="codigo" name="data[codigo]" placeholder="Escribe el código de la carrera" type="text" required maxlength=50>
+					<input value=<?php echo $this->data['Carrera']['codigo']?> class="form-control" id="codigo" name="data[codigo]" placeholder="Escribe el código de la carrera" type="text" required maxlength=15>
 				</div>
 			</div>			
 		</div>

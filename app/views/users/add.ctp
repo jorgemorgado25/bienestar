@@ -44,13 +44,13 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Nombre</label>
-					<input class="form-control" type="text" id="nombres" name="data[User][nombres]" type="text" tabindex="1" required autofocus>	
+					<input class="form-control" type="text" id="nombres" name="data[User][nombres]" type="text" tabindex="1" required autofocus maxlength="60">	
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Apellido</label>
-					<input class="form-control" type="text" id="apellidos" name="data[User][apellidos]" type="text" tabindex="2" required>
+					<input class="form-control" type="text" id="apellidos" name="data[User][apellidos]" type="text" tabindex="2" required maxlength="60">
 					
 				</div>
 			</div>

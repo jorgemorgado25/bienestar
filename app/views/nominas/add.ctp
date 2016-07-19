@@ -1,9 +1,3 @@
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('input').numeric("integer");
-	});
-</script>
-
 <h2>Crear Pagos</h2><br>
 
 <?php
@@ -43,7 +37,6 @@
 								'div'=>false,
 								'class'=>'form-control',
 								'required'=>'required',
-								'empty'=>true
 							));
 						?>
 					</div>
