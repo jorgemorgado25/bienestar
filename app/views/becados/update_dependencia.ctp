@@ -1,6 +1,6 @@
 <?php echo $this->Html->script('buscar-dependencias'); ?>
 
-<h2>Actualizar Status de Activo</h2><br>
+<h2>Actualizar Status de Dependencia</h2><br>
 
 <b>Cédula: </b><?php echo $becado['Estudiante']['cedula'] ?><br>
 <b>Nombre y Apellido: </b><?php echo $becado['Estudiante']['nombres'] . ' ' . $becado['Estudiante']['apellidos'] ?>

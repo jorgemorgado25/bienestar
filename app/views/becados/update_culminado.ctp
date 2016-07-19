@@ -1,9 +1,14 @@
 <script>
 	$( document ).ready(function() {
-    	$('#ano_fin').numeric("integer");
+    	$('#ano_fin').numeric({
+    		allowMinus   : false,
+	    	allowThouSep : false,
+	    	allowDecSep  : false,
+	    	allow: '.'
+    	});
 	});
 </script>
-<h2>Actualizar Status de Activo</h2><br>
+<h2>Actualizar Status de Culminado</h2><br>
 
 <b>Cédula: </b><?php echo $becado['Estudiante']['cedula'] ?><br>
 <b>Nombre y Apellido: </b><?php echo $becado['Estudiante']['nombres'] . ' ' . $becado['Estudiante']['apellidos'] ?>
