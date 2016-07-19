@@ -1,7 +1,11 @@
 <script>
 	$(document).ready(function()
 	{
-		$("#codigo").numeric("integer");
+		$("#codigo").alpha({
+			allowNumeric : 'true',
+			disallow: 'qwertyuiopasdfghjklzxcvbnmñQWERTYUIOPASDFGHJKLZXCVBNMÑ',
+			allow: '/'
+		});	
 	});
 </script>
 
@@ -22,13 +26,13 @@
 			<div class="col-md-7">
 				<div class="form-group">
 					<label>Nombre</label>
-					<input class="form-control" id="nombre" name="data[nombre]" placeholder="Escribe el nombre de la carrera" type="text" autofocus required>
+					<input class="form-control" id="nombre" name="data[nombre]" placeholder="Escribe el nombre de la carrera" type="text" autofocus required maxlength=150>
 				</div>
 			</div>
 			<div class="col-md-5">
 				<div class="form-group">
 					<label>Código</label>
-					<input class="form-control" id="codigo" name="data[codigo]" placeholder="Escribe el código de la carrera" type="text" required maxlength=10>
+					<input class="form-control" id="codigo" name="data[codigo]" placeholder="Escribe el código de la carrera" type="text" required maxlength=50>
 				</div>
 			</div>			
 		</div>

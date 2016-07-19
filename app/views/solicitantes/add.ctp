@@ -34,13 +34,13 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Nombres</label>
-					<input class="form-control" id="nombres" name="data[nombres]" placeholder="Escribe los nombres" type="text" required>
+					<input class="form-control" id="nombres" name="data[nombres]" placeholder="Escribe los nombres" type="text" required maxlength="60">
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Apellidos</label>
-					<input class="form-control" id="apellidos" name="data[apellidos]" placeholder="Escribe los apellidos" type="text" required >
+					<input class="form-control" id="apellidos" name="data[apellidos]" placeholder="Escribe los apellidos" type="text" required maxlength="60">
 				</div>
 			</div>
 		</div>		
@@ -71,13 +71,13 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Teléfono</label>
-					<input class="form-control" id="telefono" name="data[telefono]" placeholder="Escribe el teléfono" type="text" required>
+					<input class="form-control" id="telefono" name="data[telefono]" placeholder="Escribe el teléfono" type="text" required maxlength="20">
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Correo Electrónico</label>
-					<input class="form-control" id="email" name="data[email]" placeholder="Escribe el correo electrónico" required type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+					<input class="form-control" id="email" name="data[email]" placeholder="Escribe el correo electrónico" required type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" maxlength="80">
 				</div>
 			</div>
 		</div>
@@ -86,7 +86,7 @@
 			<div class="col-md-12">
 				<div class="form-group">
 					<label>Dirección</label>
-					<input class="form-control" id="direccion" name="data[direccion]" placeholder="Escribe la dirección" type="text" required>
+					<input class="form-control" id="direccion" name="data[direccion]" placeholder="Escribe la dirección" type="text" required maxlength="200">
 				</div>
 			</div>
 		</div>
@@ -99,7 +99,7 @@
 						<span class="input-group-addon">
 						<input id="chkdiscapacidad" type="checkbox" name="data[discapacidad]">
 						</span>
-						<input type="text" id="des_discapacidad" name="data[des_discapacidad]" class="form-control">
+						<input type="text" id="des_discapacidad" name="data[des_discapacidad]" class="form-control" maxlength="60">
 					</div>
 				</div>
 			</div>
@@ -110,7 +110,7 @@
 						<span class="input-group-addon">
 						<input id="chketnia" type="checkbox" name="data[etnia]">
 						</span>
-						<input type="text" id="nombre_etnia" name="data[nombre_etnia]" class="form-control" >
+						<input type="text" id="nombre_etnia" name="data[nombre_etnia]" class="form-control" maxlength="60">
 					</div>
 				</div>
 			</div>			
@@ -156,7 +156,7 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Año o Semestre</label>
-					<input class="form-control" id="semestre" name="data[semestre]" placeholder="Escribe los datos" type="text" required >
+					<input class="form-control" id="semestre" name="data[semestre]" placeholder="Escribe los datos" type="text" required maxlength="20">
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -192,7 +192,7 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Código</label>
-					<input class="form-control" id="codigo" name="data[codigo]" placeholder="Escribe el código" type="text" required >
+					<input class="form-control" id="codigo" name="data[codigo]" placeholder="Escribe el código" type="text" required maxlength="20">
 				</div>	
 			</div>
 			<div class="col-md-6">

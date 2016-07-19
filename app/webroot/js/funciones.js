@@ -1,13 +1,11 @@
 $(document).ready(function() {
 
-	$('#cedula, #cedula-edit, #telefono, #codigo').numeric("integer");
+	$('#cedula, #cedula-edit, #codigo, #telefono, #n_materias, #n_aplazadas').numeric({
+    	allowMinus   : false,
+    	allowThouSep : false,
+    	allowDecSep: false
+    });
 	$('#promedio').numeric();
-
-	$('#n_materias, #n_aplazadas').numeric("integer");
-
-	/*$("#nombres, #apellidos").alphanum({
-    	allowNumeric  : false
-	});*/
 
 	$("#nombres, #apellidos").alpha();
 

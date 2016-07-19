@@ -1,3 +1,10 @@
+<script>
+	$(document).ready(function()
+	{
+		$("#nombres, #apellidos").alpha();
+	});
+</script>
+
 <script type="text/javascript">
 	$("document").ready(function()
 	{
@@ -37,13 +44,13 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Nombre</label>
-					<input class="form-control" type="text" name="data[User][nombres]" type="text" tabindex="1" required autofocus>	
+					<input class="form-control" type="text" id="nombres" name="data[User][nombres]" type="text" tabindex="1" required autofocus>	
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Apellido</label>
-					<input class="form-control" type="text" name="data[User][apellidos]" type="text" tabindex="2" required>
+					<input class="form-control" type="text" id="apellidos" name="data[User][apellidos]" type="text" tabindex="2" required>
 					
 				</div>
 			</div>
@@ -53,7 +60,7 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Login</label>
-					<input class="form-control" type="text" name="data[User][login]" type="text" tabindex="4" required>	
+					<input class="form-control" type="text" name="data[User][login]" type="text" tabindex="4" required maxlength=25>	
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -72,13 +79,13 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Password</label>
-					<input class="form-control" id="pass" type="password" name="data[User][password]" type="text" tabindex="5" required>	
+					<input class="form-control" id="pass" type="password" name="data[User][password]" type="text" tabindex="5" required maxlength=32>	
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Re-password</label>
-					<input class="form-control" id="re-pass" type="password" name="data[User][re-password]" type="text" tabindex="6" required>
+					<input class="form-control" id="re-pass" type="password" name="data[User][re-password]" type="text" tabindex="6" required maxlength=32>
 				</div>
 			</div>
 		</div>

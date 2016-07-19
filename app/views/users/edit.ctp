@@ -1,3 +1,9 @@
+<script>
+	$(document).ready(function()
+	{
+		$("#nombres, #apellidos").alpha();
+	});
+</script>
 
 <h2>Editar Administrador</h2><br>
 <?php
@@ -24,13 +30,13 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Nombre</label>
-					<input class="form-control" value="<?php echo $this->data['User']['nombres'] ?>" type="text" name="data[User][nombres]" type="text" tabindex="1" required autofocus>	
+					<input class="form-control" value="<?php echo $this->data['User']['nombres'] ?>" type="text" id="nombres" name="data[User][nombres]" tabindex="1" required autofocus maxlength=60>	
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Apellido</label>
-					<input class="form-control" value="<?php echo $this->data['User']['apellidos'] ?>" type="text" name="data[User][apellidos]" type="text" tabindex="2" required>
+					<input class="form-control" value="<?php echo $this->data['User']['apellidos'] ?>" type="text" id="apellidos" name="data[User][apellidos]" tabindex="2" required maxlength=60>
 					
 				</div>
 			</div>
