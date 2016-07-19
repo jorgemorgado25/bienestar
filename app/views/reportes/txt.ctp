@@ -51,7 +51,7 @@
 			
 
 
-				$alumnos_por_pagina = 5;
+				$alumnos_por_pagina = 50;
 				$van_total_alumnos = 0;
 				$van = 0;
 
