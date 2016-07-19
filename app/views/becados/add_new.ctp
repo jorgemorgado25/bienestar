@@ -2,6 +2,7 @@
 	echo $this->Html->script('funciones');
 	echo $this->Html->script('buscar-dependencias');
 	echo $this->Html->script('validar_datos_beneficiados');
+	echo $this->Html->script('validar_input_fecha');
 ?>
 
 <h2>Agregar Beneficiado</h2><br>
