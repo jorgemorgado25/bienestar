@@ -228,7 +228,7 @@
 
 	<input value="<?php echo $this->data['Estudiante']['discapacidad'] ?>" type="hidden" id="hidden-discapacidad" name="data[discapacidad]">
 	
-<input type="hidden" name="data[estudiante_id]" value="<?php echo $est['Estudiante']['id'] ?>">
+<input type="hidden" name="data[estudiante_id]" id="estudiante_id" value="<?php echo $est['Estudiante']['id'] ?>">
 <input type="hidden" name="data[academico_id]" value="<?php echo $ac['Academico']['id'] ?>">
 
 <?php echo $form->hidden('id' ,array('value' => $this->data['Solicitante']['id'])); ?>
