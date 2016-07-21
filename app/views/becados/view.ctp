@@ -183,11 +183,11 @@
 
 <a href="<?php echo $this->webroot . 'becados/update_activo/' . $becado['Becado']['id'] ?>" class="btn btn-primary pull-right" id="btn-activo"
 	<?php 
-						if ($becado['Becado']['culminado'])
-						{
-							echo 'disabled';
-						}
-					?>
+		if ($becado['Becado']['culminado'])
+		{
+			echo 'disabled';
+		}
+	?>
 ><i class="glyphicon glyphicon-refresh"></i> &nbsp;Actualizar Status</a>
 <p><br/></p><p><br/></p>
 
@@ -280,6 +280,13 @@
 	</table>
 </div>
 
-<a href="<?php echo $this->webroot . 'becados/update_dependencia/' . $becado['Becado']['id'] ?>" class="btn btn-primary pull-right" id="btn-culminado"><i class="glyphicon glyphicon-refresh"></i> &nbsp;Actualizar Status</a>
+<a href="<?php echo $this->webroot . 'becados/update_dependencia/' . $becado['Becado']['id'] ?>" class="btn btn-primary pull-right" id="btn-culminado"
+	<?php 
+		if ($becado['Becado']['culminado'])
+		{
+			echo 'disabled';
+		}
+	?>
+><i class="glyphicon glyphicon-refresh"></i> &nbsp;Actualizar Status</a>
 
 <p><br/></p><p><br/></p>
