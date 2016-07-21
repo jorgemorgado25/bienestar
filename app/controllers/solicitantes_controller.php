@@ -184,6 +184,16 @@ class SolicitantesController extends AppController {
 	function add() {
 		if (!empty($this->data))
 		{
+			$estudiante = $this->Estudiante->ffCedula($this->data['cedula']);
+			if($estudiante)
+			{
+				$this->Session->setFlash('
+				<div class="alert alert-danger text-center" role="alert">
+					La cédula se encuentra registrada
+				</div>
+				');
+			$this->redirect(array('action' => 'add'));
+			}
 			$this->data['fecha_nac'] = $this->Fechas->fechaAbase($this->data['fecha_nac']);
 			$this->Estudiante->save($this->data);
 			$estudiante = $this->Estudiante->ffCedula($this->data['cedula']);

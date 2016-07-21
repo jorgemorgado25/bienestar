@@ -6,6 +6,12 @@
 
 <h2>Agregar Solicitud</h2><br>
 
+<?php
+	if($this->Session->check('Message.flash')):
+		echo $this->Session->flash();
+	endif;
+?>
+
 <div style="display:none" id="msj1" class="alert alert-danger text-center" role="alert"></div>
 <form id="frm-registrar" action="<?php echo $html->url('/solicitantes/add'); ?>" method="post">
 <div class="panel panel-default">
@@ -147,7 +153,7 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Cohorte</label>
-					<input class="form-control" id="cohorte" name="data[cohorte]" placeholder="Escribe la cohorte" type="text" required maxlength=6>
+					<input class="form-control" id="cohorte" name="data[cohorte]" placeholder="Escribe la cohorte" type="text" required maxlength=5>
 				</div>
 			</div>
 		</div>

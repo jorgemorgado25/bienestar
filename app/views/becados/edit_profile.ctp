@@ -148,7 +148,7 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Cohorte</label>
-					<input class="form-control" value="<?php echo $est['Academico']['cohorte'] ?>" id="cohorte" name="data[cohorte]" placeholder="Escribe la cohorte" type="text" required maxlength="6">
+					<input class="form-control" value="<?php echo $est['Academico']['cohorte'] ?>" id="cohorte" name="data[cohorte]" placeholder="Escribe la cohorte" type="text" required maxlength="5">
 				</div>
 			</div>
 		</div>

@@ -4,8 +4,7 @@ $(document).ready(function() {
 	{
 		$("#cohorte").alpha({
 			allowNumeric : 'true',
-			disallow: 'qwertyuiopasdfghjklzxcvbnmñQWERTYUIOPASDFGHJKLZXCVBNMÑ',
-			allow: '-'
+			disallow: 'qwertyuiopasdfghjklzxcvbnmñQWERTYUIOPASDFGHJKLZXCVBNMÑ'
 		});	
 	});
 
