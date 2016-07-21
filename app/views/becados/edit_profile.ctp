@@ -187,7 +187,7 @@
 
 <div style="display:none" id="msj2" class="alert alert-danger text-center" role="alert"></div>
 
-	<input type="hidden" name="data[estudiante_id]" value="<?php echo $this->data['Estudiante']['id'] ?>">
+	<input type="hidden" name="data[estudiante_id]" id="estudiante_id" value="<?php echo $this->data['Estudiante']['id'] ?>">
 	<input type="hidden" name="data[becado_id]" value="<?php echo $becado['Becado']['id'] ?>">
 	<input type="hidden" name="data[academico_id]" value="<?php echo $ac['Academico']['id'] ?>">
 
