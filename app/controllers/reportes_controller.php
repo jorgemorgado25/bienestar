@@ -166,7 +166,7 @@ class ReportesController extends AppController {
 					{
 						$this->Session->setFlash('
 						<div class="alert alert-danger text-center" role="alert">
-							El alumno no tiene pagos
+							El Estudiante no tiene pagos
 						</div>');
 					}
 					
@@ -174,7 +174,7 @@ class ReportesController extends AppController {
 				{
 					$this->Session->setFlash('
 					<div class="alert alert-danger text-center" role="alert">
-						El alumno no está becado
+						El Estudiante no está becado
 					</div>');
 				}
 			}else

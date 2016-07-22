@@ -184,7 +184,7 @@
                                     <a href="<?php echo $this->webroot . 'reportes/nomina_txt' ?>"><i class='glyphicon glyphicon-menu-right'></i> Cierre mensual</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo $this->webroot . 'reportes/pago_alumno' ?>"><i class='glyphicon glyphicon-menu-right'></i> Pago por Alumno</a>
+                                    <a href="<?php echo $this->webroot . 'reportes/pago_alumno' ?>"><i class='glyphicon glyphicon-menu-right'></i> Pago por Estudiante</a>
                                 </li>
                                 <li>
                                     <a href="<?php echo $this->webroot . 'reportes/beneficiados_excel' ?>"><i class='glyphicon glyphicon-menu-right'></i> Beneficiados Excel</a>
