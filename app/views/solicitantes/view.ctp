@@ -2,7 +2,9 @@
 
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h4>Datos del Estudiante</h4>
+		<h4>Datos del Estudiante
+		<a title="Editar" href="<?php echo $this->webroot . 'solicitantes/edit/' . $solicitante['Solicitante']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
+		</h4>
 	</div>
 	<table class="table table-bordered">
 		<tr>

@@ -44,7 +44,7 @@
 			<th>Código</th>
 			<th>P</th>
 			<th>Fecha</th>
-			<th width=165px>Acciones</th>
+			<th width=130px>Acciones</th>
 		</tr>
 	</thead>
 	<?php
@@ -59,8 +59,6 @@
 		<td><?php echo $solicitante['Solicitante']['prioridad']; ?></td>
 		<td><?php echo $this->Fechas->FormatoFecha($solicitante["Solicitante"]["created"]);?></td>
 		<td class="actions">
-			<a title="Editar" href="<?php echo $this->webroot . 'solicitantes/edit/' . $solicitante['Solicitante']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
-
 			<a title="Ver Ficha del Solicitante" href="<?php echo $this->webroot . 'solicitantes/view/' . $solicitante['Solicitante']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-search"></i></a>
 
 			<a title="Descargar PDF" target="_blank" href="<?php echo $this->webroot . 'solicitantes/pdf_solicitud/' . $solicitante['Estudiante']['id'] ?>" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-print"></i></a>
