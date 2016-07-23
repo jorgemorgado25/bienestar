@@ -166,7 +166,7 @@ class BecadosController extends AppController {
 
 		$academico = $this->Academico->find('first',array(
 						'conditions' => array(
-							'Academico.estudiante_id' => 11
+							'Academico.estudiante_id' => $est["Estudiante"]["id"]
 						)
 					));
 
