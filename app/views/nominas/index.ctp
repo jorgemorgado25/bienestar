@@ -11,7 +11,13 @@
 	});
 </script>
 
-<h2>Listado de Pagos</h2><br>
+<h2>Listado de Pagos
+
+<a href="<?php echo $this->webroot . 'nominas/add/' ?>" class="btn btn-primary pull-right btn-sm"><i class="glyphicon glyphicon-plus"></i> Crear</a>
+
+</h2>
+
+<br>
 
 <?php
 	if($this->Session->check('Message.flash')):

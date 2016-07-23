@@ -14,6 +14,8 @@
 		{
 			if(isset($rep[$i][$j]["nomina"]))
 			{
+				//$i = tipo;
+				//$j = nucleo;
 				//echo "***********PRIMERA CABECERA";
 				
 				echo "UNIVERSIDAD ROMULO GALLEGOS";
@@ -34,7 +36,7 @@
 				echo "\r\n";
 				echo "    ***          NOMINA DEFINITIVA DE PAGO POR CONCEPTO          ***   ";
 				echo "\r\n";
-				echo "               PROGRAMA: " . strtoupper($rep[$i]["tipo"]) . '     NUCLÉO: ' . $rep[$i][$j]["nucleo"];
+				echo "      PROGRAMA: " . strtoupper($rep[$i]["tipo"]) . '     NUCLÉO: ' . $rep[$i][$j]["nucleo"];
 				echo " ";
 				if($subtotal != 0)
 				{
@@ -77,7 +79,7 @@
 					$van++;
 					$van_total_alumnos++;
 
-					if ($van == $alumnos_por_pagina)
+					if ($van == $alumnos_por_pagina && count($rep[$i][$j]["nomina"]) != $alumnos_por_pagina)
 					{
 						$pagina++;
 						
@@ -107,7 +109,7 @@
 						echo "\r\n";
 						echo "    ***          NOMINA DEFINITIVA DE PAGO POR CONCEPTO          ***   ";
 						echo "\r\n";
-						echo "               PROGRAMA: " . strtoupper($rep[$i]["tipo"]) . '     NUCLÉO: ' . $rep[$i][$j]["nucleo"];
+						echo "      PROGRAMA: " . strtoupper($rep[$i]["tipo"]) . '     NUCLÉO: ' . $rep[$i][$j]["nucleo"];
 						echo " ";
 						if($subtotal != 0)
 						{
