@@ -79,6 +79,22 @@
 </div>
 
 <div class="panel panel-default">
+	<div class="panel-heading"><h4>Datos Académicos</h4></div>
+	<table class="table">
+		<tr>
+			<th>Carrera</th>
+			<th>Semestre</th>
+			<th>Cohorte</th>
+		</tr>
+		<tr>
+			<td><?php echo $academico["Carrera"]["nombre"] ?></td>
+			<td><?php echo $academico["Academico"]["semestre"] ?></td>
+			<td><?php echo $academico["Academico"]["cohorte"] ?></td>
+		</tr>
+	</table>
+</div>
+
+<div class="panel panel-default">
 	<div class="panel-heading"><h4>Datos del Beneficio</h4></div>
 	<table class="table">
 		<tr>
