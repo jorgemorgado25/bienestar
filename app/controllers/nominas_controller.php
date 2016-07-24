@@ -4,7 +4,8 @@ class NominasController extends AppController {
 	var $name = 'Nominas';
 	var $uses = array('Becado','Cabecera','Tipo');
 
-	function beforeFilter(){
+	function beforeFilter()
+	{
 		$this->layout='admin';
 		if($this->Session->check('user') == false)
 		{
@@ -194,7 +195,7 @@ class NominasController extends AppController {
 							'status' => 12,
 							'observaciones' => 'Registro generado automáticamente, beca culminada',
 							'ano_fin' => $becados[$i]['Becado']['ano_fin']
-						);						
+						);				
 					}
 				}//if becados (culminar becados)
 
@@ -254,7 +255,7 @@ class NominasController extends AppController {
 					$this->Audi->reg($this->Session->read('user.User.id'), 'front','login','-', $this->Session->read('user.User.login'), 'front/login/', 'Inicio de Sesión');
 				}// for
 
-				//desactivar bolsa de trabajo
+				#desactivar bolsa de trabajo
 				if($this->data["tipo_id"] == 2)
 				{
 					$this->Becado->updateAll(
@@ -263,7 +264,17 @@ class NominasController extends AppController {
 					    ),
 			    		array('Becado.tipo_id' => 2, 'Becado.culminado' => 0)
 					);
-				}
+
+					for ($i = 0; $i < count($becados); $i++)
+					{
+						$data['becado_id'] = $becados[$i]['Becado']['id'];
+						$data['activo'] = 0;
+						$data['status'] = 13;
+						$data['observaciones'] = 'Desactivado automáticamente - Pago mensual bolsa de trabajo.';
+						$this->Becado->Activo->create();
+						$this->Becado->Activo->save($data);
+					}#end for
+				}#end if
 
 				$this->Audi->reg($this->Session->read('user.User.id'), 'nominas','add',$cabecera['Cabecera']['id'], $this->Session->read('user.User.login'), 'nominas/view/', 'Pago creado');
 				

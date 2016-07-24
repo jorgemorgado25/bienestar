@@ -1,3 +1,15 @@
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+		$('#dataTable').DataTable({
+			//"bPaginate": false,
+        	"bFilter": false,
+        	"bLengthChange": false,
+        	"iDisplayLength": 5
+        	//"bInfo": false
+		});
+	});
+</script>
+
 <h2>Detalle de Beneficiado</h2><br/>
 
 <?php
@@ -144,18 +156,19 @@
 	</table>
 </div>
 
-<div class="panel panel-default">
+<div class="panel panel-default" style="padding:10px">
 	<div class="panel-heading">
-	<h4>Historial Activo</h4>
-
+		<h4>Historial Activo</h4>
 	</div>
-	<table class="table">
-		<tr>
-			<th>Activo</th>
-			<th>Status</th>
-			<th>Observaciones</th>
-			<th>Fecha Sistema</th>
-		</tr>
+	<table class="table" id="dataTable">
+		<thead>
+			<tr>
+				<th>Activo</th>
+				<th>Status</th>
+				<th>Observaciones</th>
+				<th>Fecha Sistema</th>
+			</tr>
+		</thead>
 		<tbody id="datos-activo">
 			<?php 
 				foreach ($hact as $h)
